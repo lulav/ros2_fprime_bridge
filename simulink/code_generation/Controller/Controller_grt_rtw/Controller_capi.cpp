@@ -3,9 +3,9 @@
  *
  * Code generation for model "Controller".
  *
- * Model version              : 1.45
+ * Model version              : 1.47
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 09:32:43 2022
+ * C++ source code generated on : Mon Nov 28 10:12:43 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -43,16 +43,16 @@ static rtwCAPI_BlockParameters rtBlockParameters[]{
   { 0, TARGET_STRING("Controller/Constant1"),
     TARGET_STRING("Value"), 1, 0, 0 },
 
-  { 1, TARGET_STRING("Controller/Constant2"),
+  { 1, TARGET_STRING("Controller/kd"),
     TARGET_STRING("Value"), 0, 0, 0 },
 
-  { 2, TARGET_STRING("Controller/Constant3"),
+  { 2, TARGET_STRING("Controller/ki"),
     TARGET_STRING("Value"), 0, 0, 0 },
 
-  { 3, TARGET_STRING("Controller/Constant4"),
+  { 3, TARGET_STRING("Controller/kp"),
     TARGET_STRING("Value"), 0, 0, 0 },
 
-  { 4, TARGET_STRING("Controller/Constant5"),
+  { 4, TARGET_STRING("Controller/r_req"),
     TARGET_STRING("Value"), 0, 0, 0 },
 
   { 5, TARGET_STRING("Controller/Integrator"),
@@ -76,10 +76,10 @@ static void Controller_InitializeDataAddr(void* dataAddr[], P_Controller_T
   *Controller_P)
 {
   dataAddr[0] = (void*) (&Controller_P->Constant1_Value);
-  dataAddr[1] = (void*) (&Controller_P->Constant2_Value);
-  dataAddr[2] = (void*) (&Controller_P->Constant3_Value);
-  dataAddr[3] = (void*) (&Controller_P->Constant4_Value);
-  dataAddr[4] = (void*) (&Controller_P->Constant5_Value);
+  dataAddr[1] = (void*) (&Controller_P->kd_Value);
+  dataAddr[2] = (void*) (&Controller_P->ki_Value);
+  dataAddr[3] = (void*) (&Controller_P->kp_Value);
+  dataAddr[4] = (void*) (&Controller_P->r_req_Value);
   dataAddr[5] = (void*) (&Controller_P->Integrator_IC);
 }
 
@@ -182,10 +182,10 @@ static rtwCAPI_ModelMappingStaticInfo mmiStatic{
     rtElementMap, rtSampleTimeMap, rtDimensionArray },
   "float",
 
-  { 3689049103U,
-    745901375U,
-    2608973738U,
-    2046352288U },
+  { 3716250720U,
+    3720263852U,
+    1624782725U,
+    1408666498U },
   (nullptr), 0,
   (boolean_T)0
 };

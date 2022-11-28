@@ -3,9 +3,9 @@
  *
  * Code generation for model "Controller".
  *
- * Model version              : 1.45
+ * Model version              : 1.47
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 09:32:43 2022
+ * C++ source code generated on : Mon Nov 28 10:12:43 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -144,10 +144,10 @@ void Controller::step()
     real_T *lastU;
 
     /* Sum: '<Root>/Add' incorporates:
-     *  Constant: '<Root>/Constant5'
+     *  Constant: '<Root>/r_req'
      *  Inport: '<Root>/state'
      */
-    Controller_B.error = Controller_P.Constant5_Value - Controller_U.state.r;
+    Controller_B.error = Controller_P.r_req_Value - Controller_U.state.r;
 
     /* Derivative: '<Root>/Derivative' */
     rtb_Derivative = (&Controller_M)->Timing.t[0];
@@ -175,19 +175,18 @@ void Controller::step()
     /* End of Derivative: '<Root>/Derivative' */
 
     /* Outport: '<Root>/u' incorporates:
-     *  Constant: '<Root>/Constant2'
-     *  Constant: '<Root>/Constant3'
-     *  Constant: '<Root>/Constant4'
+     *  Constant: '<Root>/kd'
+     *  Constant: '<Root>/ki'
+     *  Constant: '<Root>/kp'
      *  DotProduct: '<Root>/Dot Product'
      *  DotProduct: '<Root>/Dot Product1'
      *  DotProduct: '<Root>/Dot Product2'
      *  Integrator: '<Root>/Integrator'
      *  Sum: '<Root>/Add1'
      */
-    Controller_Y.u.u = (Controller_B.error * Controller_P.Constant4_Value +
-                        Controller_X.Integrator_CSTATE *
-                        Controller_P.Constant2_Value) + rtb_Derivative *
-      Controller_P.Constant3_Value;
+    Controller_Y.u.u = (Controller_B.error * Controller_P.kp_Value +
+                        Controller_X.Integrator_CSTATE * Controller_P.ki_Value)
+      + rtb_Derivative * Controller_P.kd_Value;
   }
 
   if (rtmIsMajorTimeStep((&Controller_M))) {

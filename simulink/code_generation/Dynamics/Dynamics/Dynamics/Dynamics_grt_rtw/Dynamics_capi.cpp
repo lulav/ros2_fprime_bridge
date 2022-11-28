@@ -3,9 +3,9 @@
  *
  * Code generation for model "Dynamics".
  *
- * Model version              : 1.43
+ * Model version              : 1.47
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 09:35:05 2022
+ * C++ source code generated on : Mon Nov 28 10:10:28 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -40,22 +40,22 @@ static rtwCAPI_BlockParameters rtBlockParameters[]{
   /* addrMapIndex, blockPath,
    * paramName, dataTypeIndex, dimIndex, fixPtIdx
    */
-  { 0, TARGET_STRING("Dynamics/Constant"),
-    TARGET_STRING("Value"), 0, 0, 0 },
-
-  { 1, TARGET_STRING("Dynamics/Constant1"),
-    TARGET_STRING("Value"), 0, 0, 0 },
-
-  { 2, TARGET_STRING("Dynamics/Constant2"),
+  { 0, TARGET_STRING("Dynamics/Constant2"),
     TARGET_STRING("Value"), 1, 0, 0 },
 
-  { 3, TARGET_STRING("Dynamics/Constant3"),
+  { 1, TARGET_STRING("Dynamics/c"),
     TARGET_STRING("Value"), 0, 0, 0 },
 
-  { 4, TARGET_STRING("Dynamics/Constant4"),
+  { 2, TARGET_STRING("Dynamics/k"),
     TARGET_STRING("Value"), 0, 0, 0 },
 
-  { 5, TARGET_STRING("Dynamics/Constant5"),
+  { 3, TARGET_STRING("Dynamics/m"),
+    TARGET_STRING("Value"), 0, 0, 0 },
+
+  { 4, TARGET_STRING("Dynamics/r0"),
+    TARGET_STRING("Value"), 0, 0, 0 },
+
+  { 5, TARGET_STRING("Dynamics/v0"),
     TARGET_STRING("Value"), 0, 0, 0 },
 
   {
@@ -75,12 +75,12 @@ static rtwCAPI_ModelParameters rtModelParameters[]{
 static void Dynamics_InitializeDataAddr(void* dataAddr[], P_Dynamics_T
   *Dynamics_P)
 {
-  dataAddr[0] = (void*) (&Dynamics_P->Constant_Value);
-  dataAddr[1] = (void*) (&Dynamics_P->Constant1_Value);
-  dataAddr[2] = (void*) (&Dynamics_P->Constant2_Value);
-  dataAddr[3] = (void*) (&Dynamics_P->Constant3_Value);
-  dataAddr[4] = (void*) (&Dynamics_P->Constant4_Value);
-  dataAddr[5] = (void*) (&Dynamics_P->Constant5_Value);
+  dataAddr[0] = (void*) (&Dynamics_P->Constant2_Value);
+  dataAddr[1] = (void*) (&Dynamics_P->c_Value);
+  dataAddr[2] = (void*) (&Dynamics_P->k_Value);
+  dataAddr[3] = (void*) (&Dynamics_P->m_Value);
+  dataAddr[4] = (void*) (&Dynamics_P->r0_Value);
+  dataAddr[5] = (void*) (&Dynamics_P->v0_Value);
 }
 
 #endif
@@ -184,10 +184,10 @@ static rtwCAPI_ModelMappingStaticInfo mmiStatic{
     rtElementMap, rtSampleTimeMap, rtDimensionArray },
   "float",
 
-  { 1961753721U,
-    3708629270U,
-    4177789179U,
-    2159740464U },
+  { 417555891U,
+    2622067050U,
+    629343439U,
+    1338661495U },
   (nullptr), 0,
   (boolean_T)0
 };
