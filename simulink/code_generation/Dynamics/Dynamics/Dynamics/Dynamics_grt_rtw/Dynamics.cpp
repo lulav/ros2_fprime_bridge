@@ -3,9 +3,9 @@
  *
  * Code generation for model "Dynamics".
  *
- * Model version              : 1.43
+ * Model version              : 1.47
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 09:35:05 2022
+ * C++ source code generated on : Mon Nov 28 10:10:28 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -132,53 +132,53 @@ void Dynamics::step()
   }
 
   if (rtmIsMajorTimeStep((&Dynamics_M))) {
-    /* Constant: '<Root>/Constant5' */
-    Dynamics_B.Constant5 = Dynamics_P.Constant5_Value;
+    /* Constant: '<Root>/v0' */
+    Dynamics_B.v0 = Dynamics_P.v0_Value;
   }
 
-  /* Integrator: '<Root>/Integrator' */
-  if (Dynamics_DW.Integrator_IWORK != 0) {
-    Dynamics_X.Integrator_CSTATE = Dynamics_B.Constant5;
+  /* Integrator: '<Root>/integrator_v' */
+  if (Dynamics_DW.integrator_v_IWORK != 0) {
+    Dynamics_X.integrator_v_CSTATE = Dynamics_B.v0;
   }
 
-  /* Integrator: '<Root>/Integrator' */
-  Dynamics_B.v = Dynamics_X.Integrator_CSTATE;
+  /* Integrator: '<Root>/integrator_v' */
+  Dynamics_B.v = Dynamics_X.integrator_v_CSTATE;
   if (rtmIsMajorTimeStep((&Dynamics_M))) {
-    /* Constant: '<Root>/Constant4' */
-    Dynamics_B.Constant4 = Dynamics_P.Constant4_Value;
+    /* Constant: '<Root>/r0' */
+    Dynamics_B.r0 = Dynamics_P.r0_Value;
   }
 
-  /* Integrator: '<Root>/Integrator1' */
-  if (Dynamics_DW.Integrator1_IWORK != 0) {
-    Dynamics_X.Integrator1_CSTATE = Dynamics_B.Constant4;
+  /* Integrator: '<Root>/integrator_r' */
+  if (Dynamics_DW.integrator_r_IWORK != 0) {
+    Dynamics_X.integrator_r_CSTATE = Dynamics_B.r0;
   }
 
   /* Outport: '<Root>/state' incorporates:
    *  BusAssignment: '<Root>/Bus Assignment'
-   *  Integrator: '<Root>/Integrator1'
+   *  Integrator: '<Root>/integrator_r'
    */
-  Dynamics_Y.state.r = Dynamics_X.Integrator1_CSTATE;
+  Dynamics_Y.state.r = Dynamics_X.integrator_r_CSTATE;
   Dynamics_Y.state.v = Dynamics_B.v;
 
   /* Product: '<Root>/Divide' incorporates:
-   *  Constant: '<Root>/Constant'
-   *  Constant: '<Root>/Constant1'
-   *  Constant: '<Root>/Constant3'
+   *  Constant: '<Root>/c'
+   *  Constant: '<Root>/k'
+   *  Constant: '<Root>/m'
    *  DotProduct: '<Root>/Dot Product'
    *  DotProduct: '<Root>/Dot Product1'
    *  Inport: '<Root>/u'
-   *  Integrator: '<Root>/Integrator1'
+   *  Integrator: '<Root>/integrator_r'
    *  Sum: '<Root>/Add'
    */
-  Dynamics_B.Divide = ((Dynamics_U.u.u - Dynamics_P.Constant3_Value *
-                        Dynamics_B.v) - Dynamics_X.Integrator1_CSTATE *
-                       Dynamics_P.Constant1_Value) / Dynamics_P.Constant_Value;
+  Dynamics_B.Divide = ((Dynamics_U.u.u - Dynamics_P.c_Value * Dynamics_B.v) -
+                       Dynamics_X.integrator_r_CSTATE * Dynamics_P.k_Value) /
+    Dynamics_P.m_Value;
   if (rtmIsMajorTimeStep((&Dynamics_M))) {
-    /* Update for Integrator: '<Root>/Integrator' */
-    Dynamics_DW.Integrator_IWORK = 0;
+    /* Update for Integrator: '<Root>/integrator_v' */
+    Dynamics_DW.integrator_v_IWORK = 0;
 
-    /* Update for Integrator: '<Root>/Integrator1' */
-    Dynamics_DW.Integrator1_IWORK = 0;
+    /* Update for Integrator: '<Root>/integrator_r' */
+    Dynamics_DW.integrator_r_IWORK = 0;
   }                                    /* end MajorTimeStep */
 
   if (rtmIsMajorTimeStep((&Dynamics_M))) {
@@ -224,11 +224,11 @@ void Dynamics::Dynamics_derivatives()
   XDot_Dynamics_T *_rtXdot;
   _rtXdot = ((XDot_Dynamics_T *) (&Dynamics_M)->derivs);
 
-  /* Derivatives for Integrator: '<Root>/Integrator' */
-  _rtXdot->Integrator_CSTATE = Dynamics_B.Divide;
+  /* Derivatives for Integrator: '<Root>/integrator_v' */
+  _rtXdot->integrator_v_CSTATE = Dynamics_B.Divide;
 
-  /* Derivatives for Integrator: '<Root>/Integrator1' */
-  _rtXdot->Integrator1_CSTATE = Dynamics_B.v;
+  /* Derivatives for Integrator: '<Root>/integrator_r' */
+  _rtXdot->integrator_r_CSTATE = Dynamics_B.v;
 }
 
 /* Model initialize function */
@@ -275,26 +275,26 @@ void Dynamics::initialize()
   /* Initialize DataMapInfo substructure containing ModelMap for C API */
   Dynamics_InitializeDataMapInfo((&Dynamics_M), &Dynamics_P);
 
-  /* Start for Constant: '<Root>/Constant5' */
-  Dynamics_B.Constant5 = Dynamics_P.Constant5_Value;
+  /* Start for Constant: '<Root>/v0' */
+  Dynamics_B.v0 = Dynamics_P.v0_Value;
 
-  /* Start for Constant: '<Root>/Constant4' */
-  Dynamics_B.Constant4 = Dynamics_P.Constant4_Value;
+  /* Start for Constant: '<Root>/r0' */
+  Dynamics_B.r0 = Dynamics_P.r0_Value;
 
-  /* InitializeConditions for Integrator: '<Root>/Integrator' incorporates:
-   *  Integrator: '<Root>/Integrator1'
+  /* InitializeConditions for Integrator: '<Root>/integrator_v' incorporates:
+   *  Integrator: '<Root>/integrator_r'
    */
   if (rtmIsFirstInitCond((&Dynamics_M))) {
-    Dynamics_X.Integrator_CSTATE = 0.0;
-    Dynamics_X.Integrator1_CSTATE = -1.0;
+    Dynamics_X.integrator_v_CSTATE = 0.0;
+    Dynamics_X.integrator_r_CSTATE = -1.0;
   }
 
-  Dynamics_DW.Integrator_IWORK = 1;
+  Dynamics_DW.integrator_v_IWORK = 1;
 
-  /* End of InitializeConditions for Integrator: '<Root>/Integrator' */
+  /* End of InitializeConditions for Integrator: '<Root>/integrator_v' */
 
-  /* InitializeConditions for Integrator: '<Root>/Integrator1' */
-  Dynamics_DW.Integrator1_IWORK = 1;
+  /* InitializeConditions for Integrator: '<Root>/integrator_r' */
+  Dynamics_DW.integrator_r_IWORK = 1;
 
   /* set "at time zero" to false */
   if (rtmIsFirstInitCond((&Dynamics_M))) {

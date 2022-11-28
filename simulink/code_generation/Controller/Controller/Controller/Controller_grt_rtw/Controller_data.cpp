@@ -3,9 +3,9 @@
  *
  * Code generation for model "Controller".
  *
- * Model version              : 1.45
+ * Model version              : 1.47
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 09:32:43 2022
+ * C++ source code generated on : Mon Nov 28 10:12:43 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -26,12 +26,12 @@ P_Controller_T Controller::Controller_P{
   },
 
   /* Expression: params.r_req.Value
-   * Referenced by: '<Root>/Constant5'
+   * Referenced by: '<Root>/r_req'
    */
   0.0,
 
   /* Expression: params.kp.Value
-   * Referenced by: '<Root>/Constant4'
+   * Referenced by: '<Root>/kp'
    */
   8.0,
 
@@ -41,12 +41,12 @@ P_Controller_T Controller::Controller_P{
   0.0,
 
   /* Expression: params.ki.Value
-   * Referenced by: '<Root>/Constant2'
+   * Referenced by: '<Root>/ki'
    */
   1.0,
 
   /* Expression: params.kd.Value
-   * Referenced by: '<Root>/Constant3'
+   * Referenced by: '<Root>/kd'
    */
   4.0
 };

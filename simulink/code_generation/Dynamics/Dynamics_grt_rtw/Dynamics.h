@@ -3,9 +3,9 @@
  *
  * Code generation for model "Dynamics".
  *
- * Model version              : 1.43
+ * Model version              : 1.47
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 09:35:05 2022
+ * C++ source code generated on : Mon Nov 28 10:10:28 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -150,34 +150,34 @@
 
 /* Block signals (default storage) */
 struct B_Dynamics_T {
-  real_T Constant5;                    /* '<Root>/Constant5' */
-  real_T v;                            /* '<Root>/Integrator' */
-  real_T Constant4;                    /* '<Root>/Constant4' */
+  real_T v0;                           /* '<Root>/v0' */
+  real_T v;                            /* '<Root>/integrator_v' */
+  real_T r0;                           /* '<Root>/r0' */
   real_T Divide;                       /* '<Root>/Divide' */
 };
 
 /* Block states (default storage) for system '<Root>' */
 struct DW_Dynamics_T {
-  int_T Integrator_IWORK;              /* '<Root>/Integrator' */
-  int_T Integrator1_IWORK;             /* '<Root>/Integrator1' */
+  int_T integrator_v_IWORK;            /* '<Root>/integrator_v' */
+  int_T integrator_r_IWORK;            /* '<Root>/integrator_r' */
 };
 
 /* Continuous states (default storage) */
 struct X_Dynamics_T {
-  real_T Integrator_CSTATE;            /* '<Root>/Integrator' */
-  real_T Integrator1_CSTATE;           /* '<Root>/Integrator1' */
+  real_T integrator_v_CSTATE;          /* '<Root>/integrator_v' */
+  real_T integrator_r_CSTATE;          /* '<Root>/integrator_r' */
 };
 
 /* State derivatives (default storage) */
 struct XDot_Dynamics_T {
-  real_T Integrator_CSTATE;            /* '<Root>/Integrator' */
-  real_T Integrator1_CSTATE;           /* '<Root>/Integrator1' */
+  real_T integrator_v_CSTATE;          /* '<Root>/integrator_v' */
+  real_T integrator_r_CSTATE;          /* '<Root>/integrator_r' */
 };
 
 /* State disabled  */
 struct XDis_Dynamics_T {
-  boolean_T Integrator_CSTATE;         /* '<Root>/Integrator' */
-  boolean_T Integrator1_CSTATE;        /* '<Root>/Integrator1' */
+  boolean_T integrator_v_CSTATE;       /* '<Root>/integrator_v' */
+  boolean_T integrator_r_CSTATE;       /* '<Root>/integrator_r' */
 };
 
 #ifndef ODE3_INTG
@@ -206,20 +206,20 @@ struct P_Dynamics_T_ {
   B_Dynamics Constant2_Value;          /* Computed Parameter: Constant2_Value
                                         * Referenced by: '<Root>/Constant2'
                                         */
-  real_T Constant5_Value;              /* Expression: params.v0.Value
-                                        * Referenced by: '<Root>/Constant5'
+  real_T v0_Value;                     /* Expression: params.v0.Value
+                                        * Referenced by: '<Root>/v0'
                                         */
-  real_T Constant4_Value;              /* Expression: params.r0.Value
-                                        * Referenced by: '<Root>/Constant4'
+  real_T r0_Value;                     /* Expression: params.r0.Value
+                                        * Referenced by: '<Root>/r0'
                                         */
-  real_T Constant3_Value;              /* Expression: params.c.Value
-                                        * Referenced by: '<Root>/Constant3'
+  real_T c_Value;                      /* Expression: params.c.Value
+                                        * Referenced by: '<Root>/c'
                                         */
-  real_T Constant1_Value;              /* Expression: params.k.Value
-                                        * Referenced by: '<Root>/Constant1'
+  real_T k_Value;                      /* Expression: params.k.Value
+                                        * Referenced by: '<Root>/k'
                                         */
-  real_T Constant_Value;               /* Expression: params.m.Value
-                                        * Referenced by: '<Root>/Constant'
+  real_T m_Value;                      /* Expression: params.m.Value
+                                        * Referenced by: '<Root>/m'
                                         */
 };
 

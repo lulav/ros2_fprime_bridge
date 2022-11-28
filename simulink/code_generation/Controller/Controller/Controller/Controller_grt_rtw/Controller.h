@@ -3,9 +3,9 @@
  *
  * Code generation for model "Controller".
  *
- * Model version              : 1.45
+ * Model version              : 1.47
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 09:32:43 2022
+ * C++ source code generated on : Mon Nov 28 10:12:43 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -217,20 +217,20 @@ struct P_Controller_T_ {
   B_Controller Constant1_Value;        /* Computed Parameter: Constant1_Value
                                         * Referenced by: '<Root>/Constant1'
                                         */
-  real_T Constant5_Value;              /* Expression: params.r_req.Value
-                                        * Referenced by: '<Root>/Constant5'
+  real_T r_req_Value;                  /* Expression: params.r_req.Value
+                                        * Referenced by: '<Root>/r_req'
                                         */
-  real_T Constant4_Value;              /* Expression: params.kp.Value
-                                        * Referenced by: '<Root>/Constant4'
+  real_T kp_Value;                     /* Expression: params.kp.Value
+                                        * Referenced by: '<Root>/kp'
                                         */
   real_T Integrator_IC;                /* Expression: 0
                                         * Referenced by: '<Root>/Integrator'
                                         */
-  real_T Constant2_Value;              /* Expression: params.ki.Value
-                                        * Referenced by: '<Root>/Constant2'
+  real_T ki_Value;                     /* Expression: params.ki.Value
+                                        * Referenced by: '<Root>/ki'
                                         */
-  real_T Constant3_Value;              /* Expression: params.kd.Value
-                                        * Referenced by: '<Root>/Constant3'
+  real_T kd_Value;                     /* Expression: params.kd.Value
+                                        * Referenced by: '<Root>/kd'
                                         */
 };
 
