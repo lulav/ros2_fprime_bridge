@@ -1,0 +1,25 @@
+This file is the manifest for the generated code from model 'Dynamics'.
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics.cpp
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics_capi.cpp
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics_data.cpp
+/usr/local/MATLAB/R2022b/rtw/c/src/common/rt_cppclass_main.cpp
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics_capi.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics_capi_host.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics_private.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics_types.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/builtin_typeid_types.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/multiword_types.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/rtmodel.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/rtwtypes.h
+/usr/local/MATLAB/R2022b/extern/include/tmwtypes.h
+/usr/local/MATLAB/R2022b/rtw/c/src/ext_mode/common/ext_work.h
+/usr/local/MATLAB/R2022b/rtw/c/src/rt_logging.h
+/usr/local/MATLAB/R2022b/rtw/c/src/rtw_capi.h
+/usr/local/MATLAB/R2022b/rtw/c/src/rtw_modelmap.h
+/usr/local/MATLAB/R2022b/rtw/c/src/rtw_modelmap_logging.h
+/usr/local/MATLAB/R2022b/simulink/include/rtw_continuous.h
+/usr/local/MATLAB/R2022b/simulink/include/rtw_solver.h
+/usr/local/MATLAB/R2022b/simulink/include/sysran_types.h
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/html
+/home/lulav/ros2_fprime_bridge/simulink/code_generation/Dynamics/Dynamics_grt_rtw/Dynamics_manifest.txt
