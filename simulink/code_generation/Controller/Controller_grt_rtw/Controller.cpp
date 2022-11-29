@@ -3,9 +3,9 @@
  *
  * Code generation for model "Controller".
  *
- * Model version              : 1.47
+ * Model version              : 1.52
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 10:12:43 2022
+ * C++ source code generated on : Tue Nov 29 15:03:59 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -15,8 +15,8 @@
  */
 
 #include "Controller.h"
+#include "Controller_types.h"
 #include "rtwtypes.h"
-#include "Controller_capi.h"
 #include "Controller_private.h"
 
 extern "C"
@@ -144,10 +144,10 @@ void Controller::step()
     real_T *lastU;
 
     /* Sum: '<Root>/Add' incorporates:
-     *  Constant: '<Root>/r_req'
+     *  Constant: '<Root>/kp'
      *  Inport: '<Root>/state'
      */
-    Controller_B.error = Controller_P.r_req_Value - Controller_U.state.r;
+    Controller_B.error = p_bus.r_req - Controller_U.state.r;
 
     /* Derivative: '<Root>/Derivative' */
     rtb_Derivative = (&Controller_M)->Timing.t[0];
@@ -175,8 +175,6 @@ void Controller::step()
     /* End of Derivative: '<Root>/Derivative' */
 
     /* Outport: '<Root>/u' incorporates:
-     *  Constant: '<Root>/kd'
-     *  Constant: '<Root>/ki'
      *  Constant: '<Root>/kp'
      *  DotProduct: '<Root>/Dot Product'
      *  DotProduct: '<Root>/Dot Product1'
@@ -184,9 +182,9 @@ void Controller::step()
      *  Integrator: '<Root>/Integrator'
      *  Sum: '<Root>/Add1'
      */
-    Controller_Y.u.u = (Controller_B.error * Controller_P.kp_Value +
-                        Controller_X.Integrator_CSTATE * Controller_P.ki_Value)
-      + rtb_Derivative * Controller_P.kd_Value;
+    Controller_Y.u.u = (Controller_B.error * p_bus.kp +
+                        Controller_X.Integrator_CSTATE * p_bus.ki) +
+      rtb_Derivative * p_bus.kd;
   }
 
   if (rtmIsMajorTimeStep((&Controller_M))) {
@@ -302,9 +300,6 @@ void Controller::initialize()
   rtsiSetSolverName(&(&Controller_M)->solverInfo,"ode3");
   rtmSetTPtr((&Controller_M), &(&Controller_M)->Timing.tArray[0]);
   (&Controller_M)->Timing.stepSize0 = 0.01;
-
-  /* Initialize DataMapInfo substructure containing ModelMap for C API */
-  Controller_InitializeDataMapInfo((&Controller_M), &Controller_P);
 
   /* InitializeConditions for Integrator: '<Root>/Integrator' */
   Controller_X.Integrator_CSTATE = Controller_P.Integrator_IC;

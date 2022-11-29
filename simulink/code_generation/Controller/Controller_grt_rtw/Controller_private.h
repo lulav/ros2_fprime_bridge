@@ -3,9 +3,9 @@
  *
  * Code generation for model "Controller".
  *
- * Model version              : 1.47
+ * Model version              : 1.52
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 10:12:43 2022
+ * C++ source code generated on : Tue Nov 29 15:03:59 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -17,7 +17,6 @@
 #ifndef RTW_HEADER_Controller_private_h_
 #define RTW_HEADER_Controller_private_h_
 #include "rtwtypes.h"
-#include "builtin_typeid_types.h"
 #include "multiword_types.h"
 #include "Controller_types.h"
 
@@ -33,6 +32,11 @@
 #ifndef rtmSetTPtr
 #define rtmSetTPtr(rtm, val)           ((rtm)->Timing.t = (val))
 #endif
+
+/* Imported (extern) block parameters */
+extern P_BUS_TYPE p_bus;               /* Variable: p_bus
+                                        * Referenced by: '<Root>/kp'
+                                        */
 
 /* private model entry point functions */
 extern void Controller_derivatives();

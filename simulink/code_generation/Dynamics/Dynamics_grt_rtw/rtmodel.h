@@ -3,9 +3,9 @@
  *
  * Code generation for model "Dynamics".
  *
- * Model version              : 1.47
+ * Model version              : 1.52
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 10:10:28 2022
+ * C++ source code generated on : Tue Nov 29 15:05:06 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

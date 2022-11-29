@@ -2,7 +2,7 @@
 ## Makefile generated for component 'Controller'. 
 ## 
 ## Makefile     : Controller.mk
-## Generated on : Mon Nov 28 10:12:46 2022
+## Generated on : Tue Nov 29 15:04:01 2022
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/Controller
 ## Product type : executable
 ## 
@@ -168,7 +168,7 @@ DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_STAN
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/Controller_grt_rtw/Controller.cpp $(START_DIR)/Controller_grt_rtw/Controller_capi.cpp $(START_DIR)/Controller_grt_rtw/Controller_data.cpp $(START_DIR)/Controller_grt_rtw/rtGetInf.cpp $(START_DIR)/Controller_grt_rtw/rtGetNaN.cpp $(START_DIR)/Controller_grt_rtw/rt_nonfinite.cpp
+SRCS = $(START_DIR)/Controller_grt_rtw/Controller.cpp $(START_DIR)/Controller_grt_rtw/Controller_data.cpp $(START_DIR)/Controller_grt_rtw/rtGetInf.cpp $(START_DIR)/Controller_grt_rtw/rtGetNaN.cpp $(START_DIR)/Controller_grt_rtw/rt_nonfinite.cpp
 
 MAIN_SRC = $(MATLAB_ROOT)/rtw/c/src/common/rt_cppclass_main.cpp
 
@@ -178,7 +178,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = Controller.o Controller_capi.o Controller_data.o rtGetInf.o rtGetNaN.o rt_nonfinite.o
+OBJS = Controller.o Controller_data.o rtGetInf.o rtGetNaN.o rt_nonfinite.o
 
 MAIN_OBJ = rt_cppclass_main.o
 
@@ -329,10 +329,6 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 
 
 Controller.o : $(START_DIR)/Controller_grt_rtw/Controller.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-Controller_capi.o : $(START_DIR)/Controller_grt_rtw/Controller_capi.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 

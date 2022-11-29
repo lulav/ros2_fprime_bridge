@@ -3,9 +3,9 @@
  *
  * Code generation for model "Dynamics".
  *
- * Model version              : 1.47
+ * Model version              : 1.52
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 10:10:28 2022
+ * C++ source code generated on : Tue Nov 29 15:05:06 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -20,7 +20,6 @@
 #include "rtw_continuous.h"
 #include "rtw_solver.h"
 #include "Dynamics_types.h"
-#include "rtw_modelmap.h"
 #include <cstring>
 
 /* Macros for accessing real-time model data structure */
@@ -46,14 +45,6 @@
 
 #ifndef rtmSetContTimeOutputInconsistentWithStateAtMajorStepFlag
 #define rtmSetContTimeOutputInconsistentWithStateAtMajorStepFlag(rtm, val) ((rtm)->CTOutputIncnstWithState = (val))
-#endif
-
-#ifndef rtmGetDataMapInfo
-#define rtmGetDataMapInfo(rtm)         ((rtm)->DataMapInfo)
-#endif
-
-#ifndef rtmSetDataMapInfo
-#define rtmSetDataMapInfo(rtm, val)    ((rtm)->DataMapInfo = (val))
 #endif
 
 #ifndef rtmGetDerivCacheNeedsReset
@@ -150,9 +141,8 @@
 
 /* Block signals (default storage) */
 struct B_Dynamics_T {
-  real_T v0;                           /* '<Root>/v0' */
+  P_BUS_TYPE m;                        /* '<Root>/m' */
   real_T v;                            /* '<Root>/integrator_v' */
-  real_T r0;                           /* '<Root>/r0' */
   real_T Divide;                       /* '<Root>/Divide' */
 };
 
@@ -206,21 +196,6 @@ struct P_Dynamics_T_ {
   B_Dynamics Constant2_Value;          /* Computed Parameter: Constant2_Value
                                         * Referenced by: '<Root>/Constant2'
                                         */
-  real_T v0_Value;                     /* Expression: params.v0.Value
-                                        * Referenced by: '<Root>/v0'
-                                        */
-  real_T r0_Value;                     /* Expression: params.r0.Value
-                                        * Referenced by: '<Root>/r0'
-                                        */
-  real_T c_Value;                      /* Expression: params.c.Value
-                                        * Referenced by: '<Root>/c'
-                                        */
-  real_T k_Value;                      /* Expression: params.k.Value
-                                        * Referenced by: '<Root>/k'
-                                        */
-  real_T m_Value;                      /* Expression: params.m.Value
-                                        * Referenced by: '<Root>/m'
-                                        */
 };
 
 /* Real-time Model Data Structure */
@@ -238,18 +213,6 @@ struct tag_RTM_Dynamics_T {
   real_T odeY[2];
   real_T odeF[3][2];
   ODE3_IntgData intgData;
-
-  /*
-   * DataMapInfo:
-   * The following substructure contains information regarding
-   * structures generated in the model's C API.
-   */
-  struct {
-    rtwCAPI_ModelMappingInfo mmi;
-    void* dataAddress[6];
-    int32_T* vardimsAddress[6];
-    RTWLoggingFcnPtr loggingPtrs[6];
-  } DataMapInfo;
 
   /*
    * Sizes:
@@ -281,10 +244,6 @@ struct tag_RTM_Dynamics_T {
     time_T tArray[2];
   } Timing;
 };
-
-/* Function to get C API Model Mapping Static Info */
-extern const rtwCAPI_ModelMappingStaticInfo*
-  Dynamics_GetCAPIStaticMap(void);
 
 /* Class declaration for model Dynamics */
 class Dynamics final

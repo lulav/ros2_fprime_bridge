@@ -3,9 +3,9 @@
  *
  * Code generation for model "Dynamics".
  *
- * Model version              : 1.47
+ * Model version              : 1.52
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 10:10:28 2022
+ * C++ source code generated on : Tue Nov 29 15:05:06 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -15,7 +15,7 @@
  */
 
 #include "Dynamics.h"
-#include "Dynamics_capi.h"
+#include "Dynamics_types.h"
 #include "Dynamics_private.h"
 
 /*
@@ -132,25 +132,21 @@ void Dynamics::step()
   }
 
   if (rtmIsMajorTimeStep((&Dynamics_M))) {
-    /* Constant: '<Root>/v0' */
-    Dynamics_B.v0 = Dynamics_P.v0_Value;
+    /* Constant: '<Root>/m' */
+    Dynamics_B.m = p_bus;
   }
 
   /* Integrator: '<Root>/integrator_v' */
   if (Dynamics_DW.integrator_v_IWORK != 0) {
-    Dynamics_X.integrator_v_CSTATE = Dynamics_B.v0;
+    Dynamics_X.integrator_v_CSTATE = Dynamics_B.m.v0;
   }
 
   /* Integrator: '<Root>/integrator_v' */
   Dynamics_B.v = Dynamics_X.integrator_v_CSTATE;
-  if (rtmIsMajorTimeStep((&Dynamics_M))) {
-    /* Constant: '<Root>/r0' */
-    Dynamics_B.r0 = Dynamics_P.r0_Value;
-  }
 
   /* Integrator: '<Root>/integrator_r' */
   if (Dynamics_DW.integrator_r_IWORK != 0) {
-    Dynamics_X.integrator_r_CSTATE = Dynamics_B.r0;
+    Dynamics_X.integrator_r_CSTATE = Dynamics_B.m.r0;
   }
 
   /* Outport: '<Root>/state' incorporates:
@@ -161,18 +157,15 @@ void Dynamics::step()
   Dynamics_Y.state.v = Dynamics_B.v;
 
   /* Product: '<Root>/Divide' incorporates:
-   *  Constant: '<Root>/c'
-   *  Constant: '<Root>/k'
-   *  Constant: '<Root>/m'
    *  DotProduct: '<Root>/Dot Product'
    *  DotProduct: '<Root>/Dot Product1'
    *  Inport: '<Root>/u'
    *  Integrator: '<Root>/integrator_r'
    *  Sum: '<Root>/Add'
    */
-  Dynamics_B.Divide = ((Dynamics_U.u.u - Dynamics_P.c_Value * Dynamics_B.v) -
-                       Dynamics_X.integrator_r_CSTATE * Dynamics_P.k_Value) /
-    Dynamics_P.m_Value;
+  Dynamics_B.Divide = ((Dynamics_U.u.u - Dynamics_B.m.c * Dynamics_B.v) -
+                       Dynamics_X.integrator_r_CSTATE * Dynamics_B.m.k) /
+    Dynamics_B.m.m;
   if (rtmIsMajorTimeStep((&Dynamics_M))) {
     /* Update for Integrator: '<Root>/integrator_v' */
     Dynamics_DW.integrator_v_IWORK = 0;
@@ -272,21 +265,15 @@ void Dynamics::initialize()
   (&Dynamics_M)->Timing.stepSize0 = 0.01;
   rtmSetFirstInitCond((&Dynamics_M), 1);
 
-  /* Initialize DataMapInfo substructure containing ModelMap for C API */
-  Dynamics_InitializeDataMapInfo((&Dynamics_M), &Dynamics_P);
-
-  /* Start for Constant: '<Root>/v0' */
-  Dynamics_B.v0 = Dynamics_P.v0_Value;
-
-  /* Start for Constant: '<Root>/r0' */
-  Dynamics_B.r0 = Dynamics_P.r0_Value;
+  /* Start for Constant: '<Root>/m' */
+  Dynamics_B.m = p_bus;
 
   /* InitializeConditions for Integrator: '<Root>/integrator_v' incorporates:
    *  Integrator: '<Root>/integrator_r'
    */
   if (rtmIsFirstInitCond((&Dynamics_M))) {
     Dynamics_X.integrator_v_CSTATE = 0.0;
-    Dynamics_X.integrator_r_CSTATE = -1.0;
+    Dynamics_X.integrator_r_CSTATE = 0.0;
   }
 
   Dynamics_DW.integrator_v_IWORK = 1;

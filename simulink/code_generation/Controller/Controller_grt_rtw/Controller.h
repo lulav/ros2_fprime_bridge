@@ -3,9 +3,9 @@
  *
  * Code generation for model "Controller".
  *
- * Model version              : 1.47
+ * Model version              : 1.52
  * Simulink Coder version : 9.8 (R2022b) 13-May-2022
- * C++ source code generated on : Mon Nov 28 10:12:43 2022
+ * C++ source code generated on : Tue Nov 29 15:03:59 2022
  *
  * Target selection: grt.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -35,7 +35,6 @@ extern "C"
 
 }
 
-#include "rtw_modelmap.h"
 #include <cstring>
 
 /* Macros for accessing real-time model data structure */
@@ -61,14 +60,6 @@ extern "C"
 
 #ifndef rtmSetContTimeOutputInconsistentWithStateAtMajorStepFlag
 #define rtmSetContTimeOutputInconsistentWithStateAtMajorStepFlag(rtm, val) ((rtm)->CTOutputIncnstWithState = (val))
-#endif
-
-#ifndef rtmGetDataMapInfo
-#define rtmGetDataMapInfo(rtm)         ((rtm)->DataMapInfo)
-#endif
-
-#ifndef rtmSetDataMapInfo
-#define rtmSetDataMapInfo(rtm, val)    ((rtm)->DataMapInfo = (val))
 #endif
 
 #ifndef rtmGetDerivCacheNeedsReset
@@ -217,20 +208,8 @@ struct P_Controller_T_ {
   B_Controller Constant1_Value;        /* Computed Parameter: Constant1_Value
                                         * Referenced by: '<Root>/Constant1'
                                         */
-  real_T r_req_Value;                  /* Expression: params.r_req.Value
-                                        * Referenced by: '<Root>/r_req'
-                                        */
-  real_T kp_Value;                     /* Expression: params.kp.Value
-                                        * Referenced by: '<Root>/kp'
-                                        */
   real_T Integrator_IC;                /* Expression: 0
                                         * Referenced by: '<Root>/Integrator'
-                                        */
-  real_T ki_Value;                     /* Expression: params.ki.Value
-                                        * Referenced by: '<Root>/ki'
-                                        */
-  real_T kd_Value;                     /* Expression: params.kd.Value
-                                        * Referenced by: '<Root>/kd'
                                         */
 };
 
@@ -249,18 +228,6 @@ struct tag_RTM_Controller_T {
   real_T odeY[1];
   real_T odeF[3][1];
   ODE3_IntgData intgData;
-
-  /*
-   * DataMapInfo:
-   * The following substructure contains information regarding
-   * structures generated in the model's C API.
-   */
-  struct {
-    rtwCAPI_ModelMappingInfo mmi;
-    void* dataAddress[6];
-    int32_T* vardimsAddress[6];
-    RTWLoggingFcnPtr loggingPtrs[6];
-  } DataMapInfo;
 
   /*
    * Sizes:
@@ -291,10 +258,6 @@ struct tag_RTM_Controller_T {
     time_T tArray[2];
   } Timing;
 };
-
-/* Function to get C API Model Mapping Static Info */
-extern const rtwCAPI_ModelMappingStaticInfo*
-  Controller_GetCAPIStaticMap(void);
 
 /* Class declaration for model Controller */
 class Controller final

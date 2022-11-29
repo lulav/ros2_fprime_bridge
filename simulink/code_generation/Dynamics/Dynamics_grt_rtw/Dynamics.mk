@@ -2,7 +2,7 @@
 ## Makefile generated for component 'Dynamics'. 
 ## 
 ## Makefile     : Dynamics.mk
-## Generated on : Mon Nov 28 10:10:35 2022
+## Generated on : Tue Nov 29 15:05:08 2022
 ## Final product: $(RELATIVE_PATH_TO_ANCHOR)/Dynamics
 ## Product type : executable
 ## 
@@ -168,7 +168,7 @@ DEFINES = $(DEFINES_BUILD_ARGS) $(DEFINES_CUSTOM) $(DEFINES_OPTS) $(DEFINES_STAN
 ## SOURCE FILES
 ###########################################################################
 
-SRCS = $(START_DIR)/Dynamics_grt_rtw/Dynamics.cpp $(START_DIR)/Dynamics_grt_rtw/Dynamics_capi.cpp $(START_DIR)/Dynamics_grt_rtw/Dynamics_data.cpp
+SRCS = $(START_DIR)/Dynamics_grt_rtw/Dynamics.cpp $(START_DIR)/Dynamics_grt_rtw/Dynamics_data.cpp
 
 MAIN_SRC = $(MATLAB_ROOT)/rtw/c/src/common/rt_cppclass_main.cpp
 
@@ -178,7 +178,7 @@ ALL_SRCS = $(SRCS) $(MAIN_SRC)
 ## OBJECTS
 ###########################################################################
 
-OBJS = Dynamics.o Dynamics_capi.o Dynamics_data.o
+OBJS = Dynamics.o Dynamics_data.o
 
 MAIN_OBJ = rt_cppclass_main.o
 
@@ -329,10 +329,6 @@ $(PRODUCT) : $(OBJS) $(PREBUILT_OBJS) $(MAIN_OBJ)
 
 
 Dynamics.o : $(START_DIR)/Dynamics_grt_rtw/Dynamics.cpp
-	$(CPP) $(CPPFLAGS) -o "$@" "$<"
-
-
-Dynamics_capi.o : $(START_DIR)/Dynamics_grt_rtw/Dynamics_capi.cpp
 	$(CPP) $(CPPFLAGS) -o "$@" "$<"
 
 
