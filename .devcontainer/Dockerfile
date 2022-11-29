@@ -75,3 +75,7 @@ WORKDIR /app
 # installing fprime requirements
 RUN mkdir fprime && git clone https://github.com/nasa/fprime.git fprime
 RUN . /tmp/fprime-venv/bin/activate && python3 -m pip install -U -r fprime/requirements.txt
+
+RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN apt-get update
+RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
