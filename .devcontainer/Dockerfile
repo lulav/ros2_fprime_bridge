@@ -73,5 +73,5 @@ RUN groupadd --gid $USER_GID $USERNAME \
 WORKDIR /app
 
 # installing fprime requirements
-RUN mkdir -p fprime_ws/fprime && git clone https://github.com/nasa/fprime.git fprime_ws/fprime
-RUN . /tmp/fprime-venv/bin/activate && python3 -m pip install -U -r fprime_ws/fprime/requirements.txt
+RUN mkdir fprime && git clone https://github.com/nasa/fprime.git fprime
+RUN . /tmp/fprime-venv/bin/activate && python3 -m pip install -U -r fprime/requirements.txt
