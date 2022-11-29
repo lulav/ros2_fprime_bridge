@@ -1,2 +1,4 @@
 simulink/slprj/
 simulink/*.slxc
+
+common/autogen/schemas/
