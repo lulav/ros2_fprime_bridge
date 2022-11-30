@@ -1,7 +1,7 @@
 #ifndef _CONTROLLER_HPP
 #define _CONTROLLER_HPP
 
-#include "../io_structs.hpp"
+#include "io_structs.hpp"
 
 #define TIME_STEP 0.01
 

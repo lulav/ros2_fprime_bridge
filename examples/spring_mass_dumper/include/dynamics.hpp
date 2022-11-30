@@ -1,7 +1,7 @@
 #ifndef _DYNAMICS_HPP
 #define _DYNAMICS_HPP
 
-#include "../io_structs.hpp"
+#include "io_structs.hpp"
 #define TIME_STEP 0.01
 
 class Dynamics 
