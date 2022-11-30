@@ -43,7 +43,7 @@
     "top_structs" : ["state", 
                      "control_signal"],
     
-    "header_dir" : "/workspaces/ros2_fprime_bridge/examples/spring_mass_dumper/",
+    "header_dir" : "/workspaces/ros2_fprime_bridge/examples/spring_mass_dumper/include/",
     "base_output_dir" : "/workspaces/ros2_fprime_bridge/common/autogen/schemas/spring/",
 
     "base_out_name" : "spring",

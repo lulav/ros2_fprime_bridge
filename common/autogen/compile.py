@@ -359,16 +359,12 @@ def get_proto_arg(direction):
         return g_input["translators"]["fpp2proto"]["proto_to"]
 
 
-def get_accessor(parent_name, direction):
-    parent_is_arg_name = parent_name == get_proto_arg(direction)
-    return "." if parent_is_arg_name else "->"
-
-
-def get_prefixes(parent_name, direction):
+def get_prefixes_and_accessor(parent_name, direction):
     parent_is_arg_name = parent_name == get_proto_arg(direction)
     fpp_prefix = "" if parent_is_arg_name else "fpp_"
     proto_prefix = "" if parent_is_arg_name else "proto_"
-    return fpp_prefix, proto_prefix
+    accessor = "." if parent_is_arg_name else "->"
+    return fpp_prefix, proto_prefix, accessor
 
 
 def get_proto_ptr_line(field_type, field_name, parent_name, direction):
@@ -399,36 +395,39 @@ def pop_parent(dynasty):
     dynasty[0] = s.replace(s[start:], "")
 
 
-def proto2fpp_field_assigenment(fpp_parent_name, field_name, proto_parent_name, mult):
-    fpp_prefix, proto_prefix = get_prefixes(proto_parent_name, "proto2fpp")
+def proto2fpp_field_assignment(fpp_parent_name, field_name, proto_parent_name, mult):
+    fpp_prefix, proto_prefix, accessor = get_prefixes_and_accessor(proto_parent_name, "proto2fpp")
 
     if not mult:
-        return "    {}{}.set{}({}{}->{}());\n".format(fpp_prefix, 
+        return "    {}{}.set{}({}{}{}{}());\n".format(fpp_prefix, 
                                                       fpp_parent_name,
                                                       field_name, 
                                                       proto_prefix,
                                                       proto_parent_name,
+                                                      accessor,
                                                       str.lower(field_name))
     else:
-        return "    {}{}.set{}({}{}->{}().data(), {});\n".format(fpp_prefix,
+        return "    {}{}.set{}({}{}{}{}().data(), {});\n".format(fpp_prefix,
                                                                  fpp_parent_name,
                                                                  field_name, 
                                                                  proto_prefix,
                                                                  proto_parent_name,
+                                                                 accessor,
                                                                  str.lower(field_name),
                                                                  mult)
 
 
-def proto2fpp_enum_assigenment(fpp_parent_name, field_name, proto_parent_name, enum_type):
-    fpp_prefix, proto_prefix = get_prefixes(proto_parent_name, "proto2fpp")
+def proto2fpp_enum_assignment(fpp_parent_name, field_name, proto_parent_name, enum_type):
+    fpp_prefix, proto_prefix, accessor = get_prefixes_and_accessor(proto_parent_name, "proto2fpp")
 
-    return "    {}{}.set{}(({}::{}){}{}->{}());\n".format(fpp_prefix, 
+    return "    {}{}.set{}(({}::{}){}{}{}{}());\n".format(fpp_prefix, 
                                                           fpp_parent_name,
                                                           field_name, 
                                                           fpp_ns,
                                                           enum_type,
                                                           proto_prefix,
                                                           proto_parent_name,
+                                                          accessor,
                                                           str.lower(field_name))
 
 
@@ -447,13 +446,13 @@ def proto2fpp_recursive(cpp_file, struct_type, proto_parent_name, fpp_parent_nam
 
         # integral type
         if field_type in g_input["type_dict"]:
-            cpp_file.write(proto2fpp_field_assigenment(fpp_parent_name, 
+            cpp_file.write(proto2fpp_field_assignment(fpp_parent_name, 
                                                        field_name, 
                                                        proto_parent_name, 
                                                        mult))
         # enum
         elif is_enum(field_type):
-            cpp_file.write(proto2fpp_enum_assigenment(fpp_parent_name, 
+            cpp_file.write(proto2fpp_enum_assignment(fpp_parent_name, 
                                                       field_name, 
                                                       proto_parent_name, 
                                                       field_type))
@@ -549,9 +548,8 @@ void fpp2proto(const {}::{}& {},
         cpp_file.write("    const {}* {}arr;\n".format(t_cpp, t_fpp))
 
 
-def fpp2proto_field_assigenment(fpp_parent_name, field_type, field_name, proto_parent_name, mult):
-    fpp_prefix, proto_prefix = get_prefixes(proto_parent_name, "fpp2proto")
-    accessor = get_accessor(proto_parent_name, "fpp2proto")
+def fpp2proto_field_assignment(fpp_parent_name, field_type, field_name, proto_parent_name, mult):
+    fpp_prefix, proto_prefix, accessor = get_prefixes_and_accessor(proto_parent_name, "fpp2proto")
 
     if not mult:
         return "    {}{}{}set_{}({}{}.get{}());\n".format(proto_prefix, 
@@ -578,9 +576,8 @@ def fpp2proto_field_assigenment(fpp_parent_name, field_type, field_name, proto_p
                                          arr)
 
 
-def fpp2proto_enum_assigenment(fpp_parent_name, enum_type, field_name, proto_parent_name):
-    fpp_prefix, proto_prefix = get_prefixes(proto_parent_name, "fpp2proto")
-    accessor = get_accessor(proto_parent_name, "fpp2proto")
+def fpp2proto_enum_assignment(fpp_parent_name, enum_type, field_name, proto_parent_name):
+    fpp_prefix, proto_prefix, accessor = get_prefixes_and_accessor(proto_parent_name, "fpp2proto")
 
     return "    {}{}{}set_{}(({}::{}){}{}.get{}().e);\n".format(proto_prefix, 
                                                                 proto_parent_name,
@@ -602,14 +599,14 @@ def fpp2proto_recursive(cpp_file, struct_type, fpp_from, proto_to, dynasty):
 
         # integral type
         if field_type in g_input["type_dict"]:
-            cpp_file.write(fpp2proto_field_assigenment(fpp_from, 
+            cpp_file.write(fpp2proto_field_assignment(fpp_from, 
                                                        field_type,
                                                        field_name, 
                                                        proto_to, 
                                                        mult))
         # enum
         elif is_enum(field_type):
-            cpp_file.write(fpp2proto_enum_assigenment(fpp_from, 
+            cpp_file.write(fpp2proto_enum_assignment(fpp_from, 
                                                       field_type, 
                                                       field_name, 
                                                       proto_to))
