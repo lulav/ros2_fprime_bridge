@@ -46,7 +46,8 @@ def parse_struct_field(line, type_val_list):
     # integral type
     if tp:
         type_val.append(tp)
-        type_val.append(line.strip()[line.find(tp)+len(tp)-1:].split(';', 1)[0])
+        line = line.strip()
+        type_val.append(line[line.find(tp)+len(tp):].strip().split(';', 1)[0])
     
     # struct or enum
     else:
@@ -230,7 +231,9 @@ def write_fpp_struct_line(type_val, fpp_file):
 
     field_name, array_size = get_multiplicity(type_val[1], True)
 
-    fpp_file.write("    " + field_name + " : " + array_size + " " + type_name + "\n")
+    space = " " if array_size else ""
+
+    fpp_file.write("    " + field_name + " : " + array_size + space + type_name + "\n")
 
 
 def write_fpp_enum_line(type_val, fpp_file, idx):
@@ -242,8 +245,6 @@ def write_fpp_enum_line(type_val, fpp_file, idx):
 
     # Note: We ignore the parsed enum default integer values (namely type_val[1]), 
     #       and assume the first is the base value to which the rest are incremented.
-    #       This works because the standard simulink output behaviour is
-    #       to only explicitly assign an integer value (0) to the first enum value.
     fpp_file.write("    " + type_val[0] + " = " + str(idx) + annotation + "\n")
 
 
