@@ -14,6 +14,7 @@ description: compiles Simulink generated .h (C++ header) files into their
 
 import json
 import sys
+import re
 from pathlib import Path
 
 # list of tupples of the form (<struct name>, <type-value list>, <is enum>)
@@ -72,6 +73,14 @@ def parse_enum_field(line, type_val_list):
     type_val_list.append(type_val)
 
 
+def is_whole_word(search_string, input_string):
+  raw_search_string = r"\b" + search_string + r"\b"
+
+  match_output = re.search(raw_search_string, input_string)
+
+  return False if match_output is None else True
+
+
 def parse_struct(struct_name):
     """
         Parses a cpp struct recursively.
@@ -89,7 +98,9 @@ def parse_struct(struct_name):
 
     for line in header_lines: 
         if not in_struct and full_struct_name in line:
-            in_struct = True
+            # struct names might be substrings of other struct names.
+            if is_whole_word(full_struct_name, line):
+                in_struct = True
             continue
         elif in_struct:
             if g_input["decl_end"] in line:
