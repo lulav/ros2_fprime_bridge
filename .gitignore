@@ -1,4 +1,5 @@
 simulink/slprj/
 simulink/*.slxc
+build/
 
 common/autogen/schemas/
