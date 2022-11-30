@@ -48,11 +48,12 @@ open the repository in the container from VScode with `reopen in container` opti
 Then compile with:
 
                 cd examples/spring_mass_dumper/
-                mkdir build     
+                mkdir build  
+                cd build   
                 cmake ..
                 make   
 
 # Run:
 
-                ./build/spring_mass_dumper
+                ./spring_mass_dumper
 
