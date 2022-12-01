@@ -28,7 +28,7 @@ void Controller::step()
 {
     _error  = _params.r_req - _r;
     _i_error = _last_error + _params.ki * _error * _dt;
-    _d_error = -(_r - _last_r_feedback) / _dt;
+    _d_error = -_v;
 
     _p_element = _params.kp * _error;
     _i_element = _params.ki * _i_error;
