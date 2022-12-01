@@ -156,7 +156,7 @@ module spring {
     queue size Default.queueSize \
     stack size Default.stackSize 
 
-  instance the_controller: spring.controller base id 0x0F00 \
+  instance the_controller: spring.controller_comp base id 0x0F00 \
     queue size Default.queueSize \
     stack size Default.stackSize 
 

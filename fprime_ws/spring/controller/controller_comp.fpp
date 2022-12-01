@@ -1,7 +1,7 @@
 module spring {
 
   @ The controller component
-  active component controller {
+  active component controller_comp {
 
     # ----------------------------------------------------------------------
     # General ports

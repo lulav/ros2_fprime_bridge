@@ -1,18 +1,20 @@
 // ======================================================================
-// \title  controller.hpp
+// \title  controller_comp.hpp
 // \author dev
-// \brief  hpp file for controller component implementation class
+// \brief  hpp file for controller_comp component implementation class
 // ======================================================================
 
-#ifndef controller_HPP
-#define controller_HPP
+#ifndef controller_comp_HPP
+#define controller_comp_HPP
 
-#include "spring/controller/controllerComponentAc.hpp"
+#include "spring/controller/controller_compComponentAc.hpp"
+
+#include "../../../examples/spring_mass_dumper/include/controller.hpp"
 
 namespace spring {
 
-  class controller :
-    public controllerComponentBase
+  class controller_comp :
+    public controller_compComponentBase
   {
 
     public:
@@ -21,22 +23,33 @@ namespace spring {
       // Construction, initialization, and destruction
       // ----------------------------------------------------------------------
 
-      //! Construct object controller
+      //! Construct object controller_comp
       //!
-      controller(
+      controller_comp(
           const char *const compName /*!< The component name*/
       );
 
-      //! Initialize object controller
+      //! Initialize object controller_comp
       //!
       void init(
           const NATIVE_INT_TYPE queueDepth, /*!< The queue depth*/
           const NATIVE_INT_TYPE instance = 0 /*!< The instance number*/
       );
 
-      //! Destroy object controller
+      //! Destroy object controller_comp
       //!
-      ~controller();
+      ~controller_comp();
+
+    private:
+      Controller _controller;
+
+      void copy_to_controller_input(const spring::state &state_input,
+                                    ::state controller_input);
+                                    
+      void copy_from_controller_output(const ::control_signal& controller_output,
+                                       spring::control_signal& dynamics_input);
+
+      void write_telemetry(const spring::control_signal& dynamics_input);
 
     PRIVATE:
 
