@@ -39,7 +39,6 @@ private:
     float _i_error;
     float _d_error;
     float _last_error;
-    float _last_r_feedback;
 
     float _p_element;
     float _i_element;

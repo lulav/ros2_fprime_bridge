@@ -7,7 +7,6 @@ Controller::Controller()
     _dt = TIME_STEP;
     
     _last_error = 0.0;
-    _last_r_feedback = 0.0;
 }
 
 void Controller::set_parameters(float kp, float ki, float kd, float r_req)
@@ -37,7 +36,6 @@ void Controller::step()
     _u = _p_element + _i_element + _d_element;
 
     _last_error = _error;
-    _last_r_feedback = _r;
 }
 
 void Controller::get_outputs(control_signal &control_signal)
