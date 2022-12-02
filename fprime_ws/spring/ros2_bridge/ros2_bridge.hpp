@@ -9,6 +9,16 @@
 
 #include "spring/ros2_bridge/ros2_bridgeComponentAc.hpp"
 
+#include "../../../common/autogen/schemas/spring/proto3/spring.pb.h"
+#include "../../../common/lulav_comm/udp/src/udp_client_server.hpp"
+
+#include <functional>
+#include <thread>
+#include <memory>
+
+#define STATE_MESSAGE_SIZE 64
+#define CONTROL_MESSAGE_SIZE 64
+
 namespace spring {
 
   class ros2_bridge :
@@ -37,6 +47,29 @@ namespace spring {
       //! Destroy object ros2_bridge
       //!
       ~ros2_bridge();
+
+    private:
+
+    std::shared_ptr<std::thread> _reader_thread;
+
+    std::shared_ptr<lulav::comm::udp::client> _udp_client;
+    std::shared_ptr<lulav::comm::udp::server> _udp_server;
+
+    char _controller_buff[CONTROL_MESSAGE_SIZE];
+    char _dynamics_buff[STATE_MESSAGE_SIZE];
+
+    bool _keep_reading = true;
+
+    void reading_work();
+    void dynamics_read();
+
+    // auto generated code by compile.py
+    void proto2fpp(proto_spring::state& dynamics_output,
+                   spring::state& controller_input);
+
+    // auto generated code by compile.py
+    void fpp2proto(const spring::control_signal& controller_output,
+                   proto_spring::control_signal& dynamics_input);
 
     PRIVATE:
 
