@@ -1,10 +1,13 @@
 set(SOURCE_FILES
   "${CMAKE_CURRENT_LIST_DIR}/ros2_bridge.fpp"
   "${CMAKE_CURRENT_LIST_DIR}/ros2_bridge.cpp"
-  # "${CMAKE_CURRENT_LIST_DIR}/../../../common/lulav_comm/udp/src/udp_client.cpp"
-  # "${CMAKE_CURRENT_LIST_DIR}/../../../common/lulav_comm/udp/src/udp_server.cpp"
+  
+  # communication protocol of choice:
+  "${CMAKE_CURRENT_LIST_DIR}/../../../common/lulav_comm/udp/src/udp_client.cpp"
+  "${CMAKE_CURRENT_LIST_DIR}/../../../common/lulav_comm/udp/src/udp_server.cpp"
 )
 
+# Protocol Buffers library
 find_package(Protobuf REQUIRED)
 
 set(SCHEMAS_AUTOGEN "${CMAKE_CURRENT_LIST_DIR}/../../../common/autogen/schemas")
