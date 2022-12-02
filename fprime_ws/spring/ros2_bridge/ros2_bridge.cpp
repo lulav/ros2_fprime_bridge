@@ -44,10 +44,10 @@ namespace spring {
 
   void ros2_bridge::reading_work()
   {
-    printf("ros2_bridge::opening UDP sockets...\n");
-    _udp_client = std::make_shared<client>("0.0.0.0", 42000);
-    _udp_server = std::make_shared<server>("0.0.0.0", 69000);
-    printf("Done. listening on port 69000\n");
+    printf("ros2_bridge: opening UDP sockets... ");
+    _udp_client = std::make_shared<client>("0.0.0.0", CLIENT_PORT);
+    _udp_server = std::make_shared<server>("0.0.0.0", SERVER_PORT);
+    printf("Done. listening on port %d\n", SERVER_PORT);
     
     while(_keep_reading)
     {

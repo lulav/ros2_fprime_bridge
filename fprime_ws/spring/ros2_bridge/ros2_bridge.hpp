@@ -16,8 +16,11 @@
 #include <thread>
 #include <memory>
 
-#define STATE_MESSAGE_SIZE 64
-#define CONTROL_MESSAGE_SIZE 64
+#define STATE_MESSAGE_SIZE 32
+#define CONTROL_MESSAGE_SIZE 24
+
+#define CLIENT_PORT 42000
+#define SERVER_PORT 69000
 
 namespace spring {
 
