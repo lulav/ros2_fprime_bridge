@@ -22,25 +22,29 @@ void DynamicsNode::init_ros()
 void DynamicsNode::dynamics_first_step()
 {
     Dynamics dynamics;
-    // state dynamics_output;
-    // control_signal dynamics_input;
-    // Dynamics::parameters dynamics_parameters;
+    state dynamics_output;
+    control_signal dynamics_input;
+    Dynamics::parameters dynamics_parameters;
 
-    // dynamics_node::msg::State dyn_msg;
-    // dynamics_node::msg::ControlSignal ctrl_msg;
+    dynamics_node::msg::State dyn_msg;
+    dynamics_node::msg::ControlSignal ctrl_msg;
 
-    // dynamics_input.u = 0.0;
+    proto_spring::control_signal proto_u;
+    proto_spring::state proto_state;
 
-    // dynamics.set_inputs(dynamics_input);
-    // dynamics.step();
-    // dynamics.get_outputs(dynamics_output);
+    dynamics_input.u = 0.0;
 
-    // dyn_msg.r = dynamics_output.r;
-    // dyn_msg.v = dynamics_output.v;
-    // ctrl_msg.u = dynamics_input.u;
+    dynamics.set_inputs(dynamics_input);
+    dynamics.step();
+    dynamics.get_outputs(dynamics_output);
 
-    // _pub_state.get()->publish(dyn_msg);
-    // _pub_controller.get()->publish(ctrl_msg);
+    dyn_msg.r = 
+    dyn_msg.v = dynamics_output.v;
+    ctrl_msg.u = dynamics_input.u;
+
+    _pub_state.get()->publish(dyn_msg);
+    _pub_controller.get()->publish(ctrl_msg);
+
 }
 
 void DynamicsNode::_cb_enable(const std_msgs::msg::Bool::SharedPtr msg)
@@ -50,7 +54,6 @@ void DynamicsNode::_cb_enable(const std_msgs::msg::Bool::SharedPtr msg)
       dynamics_first_step();
       first_step = false;
     }
-
 }
 
 int main(int argc, char * argv[])

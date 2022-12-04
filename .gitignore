@@ -1,5 +1,8 @@
 simulink/slprj/
 simulink/*.slxc
 build/
+install/
+log/
+
 
 common/autogen/schemas/

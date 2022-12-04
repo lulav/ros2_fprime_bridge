@@ -14,6 +14,7 @@
 
 #include "../../../../../common/lulav_comm/udp/src/udp_client_server.hpp"
 #include "../../../../../examples/spring_mass_dumper/include/dynamics.hpp"
+#include "../../../../../common/autogen/schemas/spring/proto3/spring.pb.h"
 
 #define STATE_MESSAGE_SIZE 32
 #define CONTROL_MESSAGE_SIZE 24
