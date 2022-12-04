@@ -1,0 +1,17 @@
+[  2%] Built target dynamics_node__cpp
+[ 12%] Built target dynamics_node__rosidl_generator_c
+[ 51%] Built target dynamics_node__rosidl_typesupport_introspection_cpp
+[ 51%] Built target dynamics_node__rosidl_typesupport_cpp
+[ 51%] Built target dynamics_node__rosidl_typesupport_introspection_c
+[ 51%] Built target dynamics_node__rosidl_typesupport_fastrtps_cpp
+[ 60%] Built target dynamics_node__rosidl_typesupport_c
+[ 70%] Built target dynamics_node__rosidl_typesupport_fastrtps_c
+[ 70%] Built target dynamics_node
+[35m[1mScanning dependencies of target dynamics[0m
+[ 73%] Built target dynamics_node__py
+[ 75%] [32mBuilding CXX object CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o[0m
+[ 82%] Built target dynamics_node__python
+[ 97%] Built target dynamics_node__rosidl_typesupport_fastrtps_c__pyext
+[ 97%] Built target dynamics_node__rosidl_typesupport_c__pyext
+[ 97%] Built target dynamics_node__rosidl_typesupport_introspection_c__pyext
+[100%] [32m[1mLinking CXX executable dynamics[0m

@@ -1,0 +1,129 @@
+[0.000000] (-) TimerEvent: {}
+[0.001134] (dynamics_node) JobQueued: {'identifier': 'dynamics_node', 'dependencies': OrderedDict()}
+[0.001174] (dynamics_node) JobStarted: {'identifier': 'dynamics_node'}
+[0.008644] (dynamics_node) JobProgress: {'identifier': 'dynamics_node', 'progress': 'cmake'}
+[0.009386] (dynamics_node) JobProgress: {'identifier': 'dynamics_node', 'progress': 'build'}
+[0.010460] (dynamics_node) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node', '--', '-j20', '-l20'], 'cwd': '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node', 'env': OrderedDict([('HOSTNAME', 'lulav'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/helpers/browser.sh'), ('HOME', '/home/dev'), ('TERM_PROGRAM_VERSION', '1.73.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-307a3358-2515-4166-8ebf-dd7d2c7d77c0.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock","/home/dev/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-e6c6dcb321.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.034136] (dynamics_node) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.049551] (dynamics_node) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.049952] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.100106] (-) TimerEvent: {}
+[0.137456] (dynamics_node) StdoutLine: {'line': b'-- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[0.156430] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.158458] (dynamics_node) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.200314] (-) TimerEvent: {}
+[0.217117] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.249414] (dynamics_node) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[0.250390] (dynamics_node) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.300527] (-) TimerEvent: {}
+[0.343052] (dynamics_node) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)\n'}
+[0.362337] (dynamics_node) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.400746] (-) TimerEvent: {}
+[0.438208] (dynamics_node) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)\n'}
+[0.484514] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.488580] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.500963] (-) TimerEvent: {}
+[0.505128] (dynamics_node) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[0.505382] (dynamics_node) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)\n'}
+[0.522959] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.523178] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[0.523259] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[0.532420] (dynamics_node) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.7 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[0.538404] (dynamics_node) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.539025] (dynamics_node) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.539591] (dynamics_node) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.539686] (dynamics_node) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.540083] (dynamics_node) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[0.540333] (dynamics_node) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[0.540443] (dynamics_node) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.540870] (dynamics_node) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.541190] (dynamics_node) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.541289] (dynamics_node) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.543785] (dynamics_node) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.565190] (dynamics_node) StdoutLine: {'line': b'-- Generating done\n'}
+[0.567331] (dynamics_node) StdoutLine: {'line': b'-- Build files have been written to: /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node\n'}
+[0.594348] (dynamics_node) StdoutLine: {'line': b'[  2%] Built target dynamics_node__cpp\n'}
+[0.595364] (dynamics_node) StdoutLine: {'line': b'[ 12%] Built target dynamics_node__rosidl_generator_c\n'}
+[0.601186] (-) TimerEvent: {}
+[0.607968] (dynamics_node) StdoutLine: {'line': b'[ 46%] Built target dynamics_node__rosidl_typesupport_introspection_cpp\n'}
+[0.608198] (dynamics_node) StdoutLine: {'line': b'[ 46%] Built target dynamics_node__rosidl_typesupport_cpp\n'}
+[0.608296] (dynamics_node) StdoutLine: {'line': b'[ 51%] Built target dynamics_node__rosidl_typesupport_fastrtps_cpp\n'}
+[0.608386] (dynamics_node) StdoutLine: {'line': b'[ 53%] Built target dynamics_node__rosidl_typesupport_c\n'}
+[0.608473] (dynamics_node) StdoutLine: {'line': b'[ 60%] Built target dynamics_node__rosidl_typesupport_introspection_c\n'}
+[0.622255] (dynamics_node) StdoutLine: {'line': b'[ 70%] Built target dynamics_node__rosidl_typesupport_fastrtps_c\n'}
+[0.638708] (dynamics_node) StdoutLine: {'line': b'[ 70%] Built target dynamics_node\n'}
+[0.647795] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target dynamics\x1b[0m\n'}
+[0.653545] (dynamics_node) StdoutLine: {'line': b'[ 73%] Built target dynamics_node__py\n'}
+[0.661075] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target dynamics_node__python\x1b[0m\n'}
+[0.670817] (dynamics_node) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o\x1b[0m\n'}
+[0.674084] (dynamics_node) StdoutLine: {'line': b'[ 78%] \x1b[32mBuilding C object CMakeFiles/dynamics_node__python.dir/rosidl_generator_py/dynamics_node/msg/_control_signal_s.c.o\x1b[0m\n'}
+[0.674199] (dynamics_node) StdoutLine: {'line': b'[ 80%] \x1b[32mBuilding C object CMakeFiles/dynamics_node__python.dir/rosidl_generator_py/dynamics_node/msg/_state_s.c.o\x1b[0m\n'}
+[0.701392] (-) TimerEvent: {}
+[0.728682] (dynamics_node) StdoutLine: {'line': b'[ 82%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/dynamics_node/libdynamics_node__python.so\x1b[0m\n'}
+[0.758161] (dynamics_node) StdoutLine: {'line': b'[ 82%] Built target dynamics_node__python\n'}
+[0.766210] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target dynamics_node__rosidl_typesupport_introspection_c__pyext\x1b[0m\n'}
+[0.766413] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target dynamics_node__rosidl_typesupport_fastrtps_c__pyext\x1b[0m\n'}
+[0.766498] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target dynamics_node__rosidl_typesupport_c__pyext\x1b[0m\n'}
+[0.779186] (dynamics_node) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/dynamics_node__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/dynamics_node/_dynamics_node_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[0.779388] (dynamics_node) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/dynamics_node__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/dynamics_node/_dynamics_node_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[0.779498] (dynamics_node) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/dynamics_node__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/dynamics_node/_dynamics_node_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[0.801546] (-) TimerEvent: {}
+[0.833972] (dynamics_node) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking CXX shared library rosidl_generator_py/dynamics_node/dynamics_node_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[0.834225] (dynamics_node) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/dynamics_node/dynamics_node_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[0.834358] (dynamics_node) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/dynamics_node/dynamics_node_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\x1b[0m\n'}
+[0.857543] (dynamics_node) StdoutLine: {'line': b'[ 97%] Built target dynamics_node__rosidl_typesupport_c__pyext\n'}
+[0.857772] (dynamics_node) StdoutLine: {'line': b'[ 97%] Built target dynamics_node__rosidl_typesupport_introspection_c__pyext\n'}
+[0.876300] (dynamics_node) StdoutLine: {'line': b'[ 97%] Built target dynamics_node__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.901759] (-) TimerEvent: {}
+[1.002119] (-) TimerEvent: {}
+[1.102382] (-) TimerEvent: {}
+[1.202777] (-) TimerEvent: {}
+[1.303173] (-) TimerEvent: {}
+[1.391929] (dynamics_node) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/dynamics_node.hpp:15\x1b[m\x1b[K,\n'}
+[1.392149] (dynamics_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:1\x1b[m\x1b[K:\n'}
+[1.392237] (dynamics_node) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/../../../../../common/lulav_comm/udp/src/udp_client_server.hpp:12:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Knested namespace definitions only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++17\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++17\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[1.392320] (dynamics_node) StderrLine: {'line': b'   12 | namespace \x1b[01;35m\x1b[Klulav\x1b[m\x1b[K::comm::udp\n'}
+[1.392394] (dynamics_node) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[1.403380] (-) TimerEvent: {}
+[1.413132] (dynamics_node) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:\x1b[m\x1b[K In function \xe2\x80\x98\x1b[01m\x1b[Kvoid _cb_enable(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[1.413333] (dynamics_node) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:22:54:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[1.413416] (dynamics_node) StderrLine: {'line': b'   22 | void _cb_enable(\x1b[01;35m\x1b[Kconst std_msgs::msg::Bool::SharedPtr msg\x1b[m\x1b[K)\n'}
+[1.413490] (dynamics_node) StderrLine: {'line': b'      |                 \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[1.503593] (-) TimerEvent: {}
+[1.603923] (-) TimerEvent: {}
+[1.704339] (-) TimerEvent: {}
+[1.804640] (-) TimerEvent: {}
+[1.905023] (-) TimerEvent: {}
+[2.005400] (-) TimerEvent: {}
+[2.105794] (-) TimerEvent: {}
+[2.206140] (-) TimerEvent: {}
+[2.306544] (-) TimerEvent: {}
+[2.406947] (-) TimerEvent: {}
+[2.507334] (-) TimerEvent: {}
+[2.607735] (-) TimerEvent: {}
+[2.708121] (-) TimerEvent: {}
+[2.808492] (-) TimerEvent: {}
+[2.908867] (-) TimerEvent: {}
+[3.009245] (-) TimerEvent: {}
+[3.109626] (-) TimerEvent: {}
+[3.210000] (-) TimerEvent: {}
+[3.310435] (-) TimerEvent: {}
+[3.410922] (-) TimerEvent: {}
+[3.511260] (-) TimerEvent: {}
+[3.611590] (-) TimerEvent: {}
+[3.711921] (-) TimerEvent: {}
+[3.812300] (-) TimerEvent: {}
+[3.912637] (-) TimerEvent: {}
+[4.012975] (-) TimerEvent: {}
+[4.046057] (dynamics_node) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable dynamics\x1b[0m\n'}
+[4.113102] (-) TimerEvent: {}
+[4.192491] (dynamics_node) StderrLine: {'line': b"/usr/bin/ld: CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o: in function `DynamicsNode::init_ros()':\n"}
+[4.192641] (dynamics_node) StderrLine: {'line': b"dynamics_node.cpp:(.text+0x7f4): undefined reference to `DynamicsNode::_cb_enable(std::shared_ptr<std_msgs::msg::Bool_<std::allocator<void> > >)'\n"}
+[4.200944] (dynamics_node) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[4.202092] (dynamics_node) StderrLine: {'line': b'make[2]: *** [CMakeFiles/dynamics.dir/build.make:132: dynamics] Error 1\n'}
+[4.202425] (dynamics_node) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:249: CMakeFiles/dynamics.dir/all] Error 2\n'}
+[4.202633] (dynamics_node) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[4.204952] (dynamics_node) CommandEnded: {'returncode': 2}
+[4.213298] (-) TimerEvent: {}
+[4.295318] (dynamics_node) JobEnded: {'identifier': 'dynamics_node', 'rc': 2}
+[4.306016] (-) EventReactorShutdown: {}

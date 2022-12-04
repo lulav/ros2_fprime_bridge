@@ -1,0 +1,2 @@
+Invoking command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node -- -j20 -l20
+Invoked command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node -- -j20 -l20

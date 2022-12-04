@@ -1,0 +1,17 @@
+CMake Error at CMakeLists.txt:21 (find_package):
+  By not providing "Finddynamics_node.cmake" in CMAKE_MODULE_PATH this
+  project has asked CMake to find a package configuration file provided by
+  "dynamics_node", but CMake did not find one.
+
+  Could not find a package configuration file provided by "dynamics_node"
+  with any of the following names:
+
+    dynamics_nodeConfig.cmake
+    dynamics_node-config.cmake
+
+  Add the installation prefix of "dynamics_node" to CMAKE_PREFIX_PATH or set
+  "dynamics_node_DIR" to a directory containing one of the above files.  If
+  "dynamics_node" provides a separate development package or SDK, be sure it
+  has been installed.
+
+

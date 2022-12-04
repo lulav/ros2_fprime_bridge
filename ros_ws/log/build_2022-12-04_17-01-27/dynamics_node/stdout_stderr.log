@@ -1,0 +1,78 @@
+-- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+-- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+-- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+-- Found ament_lint_auto: 0.9.7 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node
+[  2%] Built target dynamics_node__cpp
+[ 12%] Built target dynamics_node__rosidl_generator_c
+[ 46%] Built target dynamics_node__rosidl_typesupport_introspection_cpp
+[ 46%] Built target dynamics_node__rosidl_typesupport_cpp
+[ 51%] Built target dynamics_node__rosidl_typesupport_fastrtps_cpp
+[ 53%] Built target dynamics_node__rosidl_typesupport_c
+[ 60%] Built target dynamics_node__rosidl_typesupport_introspection_c
+[ 70%] Built target dynamics_node__rosidl_typesupport_fastrtps_c
+[ 70%] Built target dynamics_node
+[35m[1mScanning dependencies of target dynamics[0m
+[ 73%] Built target dynamics_node__py
+[35m[1mScanning dependencies of target dynamics_node__python[0m
+[ 75%] [32mBuilding CXX object CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o[0m
+[ 78%] [32mBuilding C object CMakeFiles/dynamics_node__python.dir/rosidl_generator_py/dynamics_node/msg/_control_signal_s.c.o[0m
+[ 80%] [32mBuilding C object CMakeFiles/dynamics_node__python.dir/rosidl_generator_py/dynamics_node/msg/_state_s.c.o[0m
+[ 82%] [32m[1mLinking C shared library rosidl_generator_py/dynamics_node/libdynamics_node__python.so[0m
+[ 82%] Built target dynamics_node__python
+[35m[1mScanning dependencies of target dynamics_node__rosidl_typesupport_introspection_c__pyext[0m
+[35m[1mScanning dependencies of target dynamics_node__rosidl_typesupport_fastrtps_c__pyext[0m
+[35m[1mScanning dependencies of target dynamics_node__rosidl_typesupport_c__pyext[0m
+[ 90%] [32mBuilding C object CMakeFiles/dynamics_node__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/dynamics_node/_dynamics_node_s.ep.rosidl_typesupport_c.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/dynamics_node__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/dynamics_node/_dynamics_node_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[ 90%] [32mBuilding C object CMakeFiles/dynamics_node__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/dynamics_node/_dynamics_node_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[ 97%] [32m[1mLinking CXX shared library rosidl_generator_py/dynamics_node/dynamics_node_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so[0m
+[ 97%] [32m[1mLinking C shared library rosidl_generator_py/dynamics_node/dynamics_node_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so[0m
+[ 97%] [32m[1mLinking C shared library rosidl_generator_py/dynamics_node/dynamics_node_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so[0m
+[ 97%] Built target dynamics_node__rosidl_typesupport_c__pyext
+[ 97%] Built target dynamics_node__rosidl_typesupport_introspection_c__pyext
+[ 97%] Built target dynamics_node__rosidl_typesupport_fastrtps_c__pyext
+In file included from [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/dynamics_node.hpp:15[m[K,
+                 from [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:1[m[K:
+[01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/../../../../../common/lulav_comm/udp/src/udp_client_server.hpp:12:11:[m[K [01;35m[Kwarning: [m[Knested namespace definitions only available with ‘[01m[K-std=c++17[m[K’ or ‘[01m[K-std=gnu++17[m[K’ [[01;35m[K-Wpedantic[m[K]
+   12 | namespace [01;35m[Klulav[m[K::comm::udp
+      |           [01;35m[K^~~~~[m[K
+[01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:[m[K In function ‘[01m[Kvoid _cb_enable(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:22:54:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   22 | void _cb_enable([01;35m[Kconst std_msgs::msg::Bool::SharedPtr msg[m[K)
+      |                 [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[100%] [32m[1mLinking CXX executable dynamics[0m
+/usr/bin/ld: CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o: in function `DynamicsNode::init_ros()':
+dynamics_node.cpp:(.text+0x7f4): undefined reference to `DynamicsNode::_cb_enable(std::shared_ptr<std_msgs::msg::Bool_<std::allocator<void> > >)'
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/dynamics.dir/build.make:132: dynamics] Error 1
+make[1]: *** [CMakeFiles/Makefile2:249: CMakeFiles/dynamics.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

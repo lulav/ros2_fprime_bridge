@@ -1,0 +1,171 @@
+-- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") 
+-- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") 
+-- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8
+-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so
+-- Found ament_lint_auto: 0.9.7 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+-- Added test 'copyright' to check source files copyright and LICENSE
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: 
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node
+[35m[1mScanning dependencies of target example[0m
+[  4%] Built target dynamics_node__cpp
+[  4%] [32mBuilding CXX object CMakeFiles/example.dir/workspaces/ros2_fprime_bridge/examples/spring_mass_dumper/src/dynamics.cpp.o[0m
+[ 13%] Built target dynamics_node__rosidl_generator_c
+[ 32%] Built target dynamics_node__rosidl_typesupport_introspection_cpp
+[ 34%] Built target dynamics_node__rosidl_typesupport_introspection_c
+[ 44%] Built target dynamics_node__rosidl_typesupport_cpp
+[ 51%] Built target dynamics_node__rosidl_typesupport_c
+[ 60%] Built target dynamics_node__rosidl_typesupport_fastrtps_cpp
+[ 62%] [32m[1mLinking CXX static library libexample.a[0m
+[ 72%] Built target dynamics_node__rosidl_typesupport_fastrtps_c
+[ 72%] Built target example
+[ 72%] Built target dynamics_node
+[35m[1mScanning dependencies of target dynamics[0m
+[ 74%] Built target dynamics_node__py
+[ 76%] [32m[1mLinking CXX executable dynamics[0m
+[ 83%] Built target dynamics_node__python
+[ 90%] Built target dynamics_node__rosidl_typesupport_fastrtps_c__pyext
+[ 93%] Built target dynamics_node__rosidl_typesupport_introspection_c__pyext
+[ 97%] Built target dynamics_node__rosidl_typesupport_c__pyext
+[100%] Built target dynamics
+-- Install configuration: ""
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/rosidl_interfaces/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_generator_c__visibility_control.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/control_signal.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__struct.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__functions.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__functions.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__struct.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__functions.c
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__type_support.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__type_support.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__functions.c
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/state.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/library_path.sh
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/library_path.dsv
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_generator_c.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_fastrtps_c.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_fastrtps_c.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/dds_fastrtps
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_fastrtps_cpp.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_fastrtps_cpp.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_typesupport_introspection_c__visibility_control.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__type_support.c
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__type_support.c
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_introspection_c.h
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_introspection_c.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_c.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/state.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/control_signal.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__traits.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__builder.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__struct.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__struct.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__builder.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__traits.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__type_support.cpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_introspection_cpp.hpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__type_support.cpp
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_introspection_cpp.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_cpp.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/pythonpath.sh
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/pythonpath.dsv
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/__init__.py
+Compiling '/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/__init__.py'...
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_state_s.c
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_control_signal_s.c
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_control_signal.py
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_state.py
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/__init__.py
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/dynamics_node_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/dynamics_node_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/dynamics_node_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__python.so
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/ControlSignal.idl
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/State.idl
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/ControlSignal.msg
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/State.msg
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/dynamics_node/dynamics
+-- Set runtime path of "/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/dynamics_node/dynamics" to ""
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/package_run_dependencies/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/parent_prefix_path/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/ament_prefix_path.sh
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/ament_prefix_path.dsv
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/path.sh
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/path.dsv
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.bash
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.sh
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.zsh
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.dsv
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/package.dsv
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/packages/dynamics_node
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_generator_cExport.cmake
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_generator_cExport-noconfig.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cExport.cmake
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cExport-noconfig.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cExport.cmake
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cExport-noconfig.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_generator_cppExport.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cppExport.cmake
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cppExport.cmake
+-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cppExport-noconfig.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/rosidl_cmake-extras.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_libraries-extras.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_targets-extras.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_include_directories-extras.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_nodeConfig.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_nodeConfig-version.cmake
+-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/package.xml

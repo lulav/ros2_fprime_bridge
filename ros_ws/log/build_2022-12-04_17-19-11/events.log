@@ -1,0 +1,77 @@
+[0.000000] (-) TimerEvent: {}
+[0.000916] (dynamics_node) JobQueued: {'identifier': 'dynamics_node', 'dependencies': OrderedDict()}
+[0.001498] (dynamics_node) JobStarted: {'identifier': 'dynamics_node'}
+[0.009838] (dynamics_node) JobProgress: {'identifier': 'dynamics_node', 'progress': 'cmake'}
+[0.009903] (dynamics_node) JobProgress: {'identifier': 'dynamics_node', 'progress': 'build'}
+[0.009939] (dynamics_node) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node', '--', '-j20', '-l20'], 'cwd': '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node', 'env': OrderedDict([('HOSTNAME', 'lulav'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/helpers/browser.sh'), ('HOME', '/home/dev'), ('TERM_PROGRAM_VERSION', '1.73.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-307a3358-2515-4166-8ebf-dd7d2c7d77c0.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock","/home/dev/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-e6c6dcb321.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.050131] (dynamics_node) StdoutLine: {'line': b'[  2%] Built target dynamics_node__cpp\n'}
+[0.050321] (dynamics_node) StdoutLine: {'line': b'[ 12%] Built target dynamics_node__rosidl_generator_c\n'}
+[0.065471] (dynamics_node) StdoutLine: {'line': b'[ 51%] Built target dynamics_node__rosidl_typesupport_introspection_cpp\n'}
+[0.065620] (dynamics_node) StdoutLine: {'line': b'[ 51%] Built target dynamics_node__rosidl_typesupport_cpp\n'}
+[0.065670] (dynamics_node) StdoutLine: {'line': b'[ 51%] Built target dynamics_node__rosidl_typesupport_introspection_c\n'}
+[0.065721] (dynamics_node) StdoutLine: {'line': b'[ 51%] Built target dynamics_node__rosidl_typesupport_fastrtps_cpp\n'}
+[0.067815] (dynamics_node) StdoutLine: {'line': b'[ 60%] Built target dynamics_node__rosidl_typesupport_c\n'}
+[0.080198] (dynamics_node) StdoutLine: {'line': b'[ 70%] Built target dynamics_node__rosidl_typesupport_fastrtps_c\n'}
+[0.094661] (dynamics_node) StdoutLine: {'line': b'[ 70%] Built target dynamics_node\n'}
+[0.100057] (-) TimerEvent: {}
+[0.105935] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target dynamics\x1b[0m\n'}
+[0.111875] (dynamics_node) StdoutLine: {'line': b'[ 73%] Built target dynamics_node__py\n'}
+[0.125014] (dynamics_node) StdoutLine: {'line': b'[ 75%] \x1b[32mBuilding CXX object CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o\x1b[0m\n'}
+[0.129637] (dynamics_node) StdoutLine: {'line': b'[ 82%] Built target dynamics_node__python\n'}
+[0.149906] (dynamics_node) StdoutLine: {'line': b'[ 97%] Built target dynamics_node__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.150110] (dynamics_node) StdoutLine: {'line': b'[ 97%] Built target dynamics_node__rosidl_typesupport_c__pyext\n'}
+[0.150204] (dynamics_node) StdoutLine: {'line': b'[ 97%] Built target dynamics_node__rosidl_typesupport_introspection_c__pyext\n'}
+[0.200263] (-) TimerEvent: {}
+[0.300643] (-) TimerEvent: {}
+[0.401039] (-) TimerEvent: {}
+[0.501336] (-) TimerEvent: {}
+[0.601723] (-) TimerEvent: {}
+[0.702125] (-) TimerEvent: {}
+[0.802401] (-) TimerEvent: {}
+[0.856405] (dynamics_node) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/dynamics_node.hpp:15\x1b[m\x1b[K,\n'}
+[0.856588] (dynamics_node) StderrLine: {'line': b'                 from \x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:1\x1b[m\x1b[K:\n'}
+[0.856634] (dynamics_node) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/../../../../../common/lulav_comm/udp/src/udp_client_server.hpp:12:11:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Knested namespace definitions only available with \xe2\x80\x98\x1b[01m\x1b[K-std=c++17\x1b[m\x1b[K\xe2\x80\x99 or \xe2\x80\x98\x1b[01m\x1b[K-std=gnu++17\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wpedantic\x1b[m\x1b[K]\n'}
+[0.856675] (dynamics_node) StderrLine: {'line': b'   12 | namespace \x1b[01;35m\x1b[Klulav\x1b[m\x1b[K::comm::udp\n'}
+[0.856713] (dynamics_node) StderrLine: {'line': b'      |           \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[0.881842] (dynamics_node) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid DynamicsNode::_cb_enable(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[0.882038] (dynamics_node) StderrLine: {'line': b'\x1b[01m\x1b[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:46:68:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused parameter \xe2\x80\x98\x1b[01m\x1b[Kmsg\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K-Wunused-parameter\x1b[m\x1b[K]\n'}
+[0.882083] (dynamics_node) StderrLine: {'line': b'   46 | void DynamicsNode::_cb_enable(\x1b[01;35m\x1b[Kconst std_msgs::msg::Bool::SharedPtr msg\x1b[m\x1b[K)\n'}
+[0.882123] (dynamics_node) StderrLine: {'line': b'      |                               \x1b[01;35m\x1b[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~\x1b[m\x1b[K\n'}
+[0.902588] (-) TimerEvent: {}
+[1.003011] (-) TimerEvent: {}
+[1.103354] (-) TimerEvent: {}
+[1.203703] (-) TimerEvent: {}
+[1.304050] (-) TimerEvent: {}
+[1.404387] (-) TimerEvent: {}
+[1.504730] (-) TimerEvent: {}
+[1.605067] (-) TimerEvent: {}
+[1.705415] (-) TimerEvent: {}
+[1.805764] (-) TimerEvent: {}
+[1.906107] (-) TimerEvent: {}
+[2.006469] (-) TimerEvent: {}
+[2.106808] (-) TimerEvent: {}
+[2.207139] (-) TimerEvent: {}
+[2.307461] (-) TimerEvent: {}
+[2.407795] (-) TimerEvent: {}
+[2.508126] (-) TimerEvent: {}
+[2.608459] (-) TimerEvent: {}
+[2.708796] (-) TimerEvent: {}
+[2.809131] (-) TimerEvent: {}
+[2.909461] (-) TimerEvent: {}
+[3.009796] (-) TimerEvent: {}
+[3.110125] (-) TimerEvent: {}
+[3.210456] (-) TimerEvent: {}
+[3.310691] (-) TimerEvent: {}
+[3.411044] (-) TimerEvent: {}
+[3.466781] (dynamics_node) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable dynamics\x1b[0m\n'}
+[3.511166] (-) TimerEvent: {}
+[3.611502] (-) TimerEvent: {}
+[3.615484] (dynamics_node) StderrLine: {'line': b"/usr/bin/ld: CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o: in function `DynamicsNode::dynamics_first_step()':\n"}
+[3.615617] (dynamics_node) StderrLine: {'line': b"dynamics_node.cpp:(.text+0xa8b): undefined reference to `Dynamics::Dynamics()'\n"}
+[3.623748] (dynamics_node) StderrLine: {'line': b'collect2: error: ld returned 1 exit status\n'}
+[3.625260] (dynamics_node) StderrLine: {'line': b'make[2]: *** [CMakeFiles/dynamics.dir/build.make:132: dynamics] Error 1\n'}
+[3.625512] (dynamics_node) StderrLine: {'line': b'make[1]: *** [CMakeFiles/Makefile2:249: CMakeFiles/dynamics.dir/all] Error 2\n'}
+[3.625691] (dynamics_node) StderrLine: {'line': b'make: *** [Makefile:141: all] Error 2\n'}
+[3.627609] (dynamics_node) CommandEnded: {'returncode': 2}
+[3.679809] (dynamics_node) JobEnded: {'identifier': 'dynamics_node', 'rc': 2}
+[3.690388] (-) EventReactorShutdown: {}

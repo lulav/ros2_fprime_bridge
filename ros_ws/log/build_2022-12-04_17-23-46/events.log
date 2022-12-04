@@ -1,0 +1,193 @@
+[0.000000] (-) TimerEvent: {}
+[0.000129] (dynamics_node) JobQueued: {'identifier': 'dynamics_node', 'dependencies': OrderedDict()}
+[0.000166] (dynamics_node) JobStarted: {'identifier': 'dynamics_node'}
+[0.008714] (dynamics_node) JobProgress: {'identifier': 'dynamics_node', 'progress': 'cmake'}
+[0.009047] (dynamics_node) JobProgress: {'identifier': 'dynamics_node', 'progress': 'build'}
+[0.009653] (dynamics_node) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node', '--', '-j20', '-l20'], 'cwd': '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node', 'env': OrderedDict([('HOSTNAME', 'lulav'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/helpers/browser.sh'), ('HOME', '/home/dev'), ('TERM_PROGRAM_VERSION', '1.73.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-307a3358-2515-4166-8ebf-dd7d2c7d77c0.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock","/home/dev/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-e6c6dcb321.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.032841] (dynamics_node) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.048665] (dynamics_node) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.048804] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.099710] (-) TimerEvent: {}
+[0.132187] (dynamics_node) StdoutLine: {'line': b'-- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)\n'}
+[0.151240] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.153316] (dynamics_node) StdoutLine: {'line': b'-- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)\n'}
+[0.199775] (-) TimerEvent: {}
+[0.211719] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.244201] (dynamics_node) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)\n'}
+[0.245158] (dynamics_node) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[0.299850] (-) TimerEvent: {}
+[0.338167] (dynamics_node) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)\n'}
+[0.357701] (dynamics_node) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found version "3.8.10") \n'}
+[0.399939] (-) TimerEvent: {}
+[0.434808] (dynamics_node) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.9.2 (/opt/ros/foxy/share/ament_cmake_ros/cmake)\n'}
+[0.479176] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.483222] (dynamics_node) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.498095] (dynamics_node) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3.5") \n'}
+[0.498286] (dynamics_node) StdoutLine: {'line': b'-- Found python_cmake_module: 0.8.1 (/opt/ros/foxy/share/python_cmake_module/cmake)\n'}
+[0.500045] (-) TimerEvent: {}
+[0.512781] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.512977] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.8\n'}
+[0.513027] (dynamics_node) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.8.so\n'}
+[0.522328] (dynamics_node) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.7 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[0.528827] (dynamics_node) StdoutLine: {'line': b"-- Added test 'copyright' to check source files copyright and LICENSE\n"}
+[0.529461] (dynamics_node) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[0.530024] (dynamics_node) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[0.530073] (dynamics_node) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[0.530449] (dynamics_node) StdoutLine: {'line': b"-- Added test 'cpplint' to check C / C++ code against the Google style\n"}
+[0.530493] (dynamics_node) StdoutLine: {'line': b'-- Configured cpplint exclude dirs and/or files: \n'}
+[0.530650] (dynamics_node) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[0.531213] (dynamics_node) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[0.531317] (dynamics_node) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[0.531355] (dynamics_node) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[0.534025] (dynamics_node) StdoutLine: {'line': b'-- Configuring done\n'}
+[0.555757] (dynamics_node) StdoutLine: {'line': b'-- Generating done\n'}
+[0.557716] (dynamics_node) StdoutLine: {'line': b'-- Build files have been written to: /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node\n'}
+[0.574160] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target example\x1b[0m\n'}
+[0.580203] (dynamics_node) StdoutLine: {'line': b'[  4%] Built target dynamics_node__cpp\n'}
+[0.580454] (dynamics_node) StdoutLine: {'line': b'[  4%] \x1b[32mBuilding CXX object CMakeFiles/example.dir/workspaces/ros2_fprime_bridge/examples/spring_mass_dumper/src/dynamics.cpp.o\x1b[0m\n'}
+[0.581037] (dynamics_node) StdoutLine: {'line': b'[ 13%] Built target dynamics_node__rosidl_generator_c\n'}
+[0.593382] (dynamics_node) StdoutLine: {'line': b'[ 32%] Built target dynamics_node__rosidl_typesupport_introspection_cpp\n'}
+[0.593655] (dynamics_node) StdoutLine: {'line': b'[ 34%] Built target dynamics_node__rosidl_typesupport_introspection_c\n'}
+[0.593778] (dynamics_node) StdoutLine: {'line': b'[ 44%] Built target dynamics_node__rosidl_typesupport_cpp\n'}
+[0.593863] (dynamics_node) StdoutLine: {'line': b'[ 51%] Built target dynamics_node__rosidl_typesupport_c\n'}
+[0.593941] (dynamics_node) StdoutLine: {'line': b'[ 60%] Built target dynamics_node__rosidl_typesupport_fastrtps_cpp\n'}
+[0.597440] (dynamics_node) StdoutLine: {'line': b'[ 62%] \x1b[32m\x1b[1mLinking CXX static library libexample.a\x1b[0m\n'}
+[0.600179] (-) TimerEvent: {}
+[0.607605] (dynamics_node) StdoutLine: {'line': b'[ 72%] Built target dynamics_node__rosidl_typesupport_fastrtps_c\n'}
+[0.616088] (dynamics_node) StdoutLine: {'line': b'[ 72%] Built target example\n'}
+[0.621946] (dynamics_node) StdoutLine: {'line': b'[ 72%] Built target dynamics_node\n'}
+[0.629762] (dynamics_node) StdoutLine: {'line': b'\x1b[35m\x1b[1mScanning dependencies of target dynamics\x1b[0m\n'}
+[0.635862] (dynamics_node) StdoutLine: {'line': b'[ 74%] Built target dynamics_node__py\n'}
+[0.645000] (dynamics_node) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX executable dynamics\x1b[0m\n'}
+[0.654613] (dynamics_node) StdoutLine: {'line': b'[ 83%] Built target dynamics_node__python\n'}
+[0.674131] (dynamics_node) StdoutLine: {'line': b'[ 90%] Built target dynamics_node__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.674373] (dynamics_node) StdoutLine: {'line': b'[ 93%] Built target dynamics_node__rosidl_typesupport_introspection_c__pyext\n'}
+[0.675000] (dynamics_node) StdoutLine: {'line': b'[ 97%] Built target dynamics_node__rosidl_typesupport_c__pyext\n'}
+[0.700299] (-) TimerEvent: {}
+[0.800656] (-) TimerEvent: {}
+[0.808259] (dynamics_node) StdoutLine: {'line': b'[100%] Built target dynamics\n'}
+[0.819807] (dynamics_node) CommandEnded: {'returncode': 0}
+[0.885478] (dynamics_node) JobProgress: {'identifier': 'dynamics_node', 'progress': 'install'}
+[0.899007] (dynamics_node) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node'], 'cwd': '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node', 'env': OrderedDict([('HOSTNAME', 'lulav'), ('GIT_ASKPASS', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass.sh'), ('SHLVL', '2'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib'), ('BROWSER', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/helpers/browser.sh'), ('HOME', '/home/dev'), ('TERM_PROGRAM_VERSION', '1.73.1'), ('VSCODE_IPC_HOOK_CLI', '/tmp/vscode-ipc-307a3358-2515-4166-8ebf-dd7d2c7d77c0.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/node'), ('COLORTERM', 'truecolor'), ('REMOTE_CONTAINERS', 'true'), ('ROS_DISTRO', 'foxy'), ('REMOTE_CONTAINERS_IPC', '/tmp/vscode-remote-containers-ipc-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/vscode/vscode-server/bin/linux-x64/6261075646f055b99068d3688932416f2346dd3b/bin/remote-cli:/opt/ros/foxy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('REMOTE_CONTAINERS_SOCKETS', '["/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock","/home/dev/.gnupg/S.gpg-agent"]'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/tmp/vscode-git-e6c6dcb321.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AUTH_SOCK', '/tmp/vscode-ssh-auth-86cb3cc746d66c5afdc7ae14717f02a55bbb5b39.sock'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('SHELL', '/bin/bash'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.901124] (-) TimerEvent: {}
+[0.908949] (dynamics_node) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.909160] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/rosidl_interfaces/dynamics_node\n'}
+[0.909238] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node\n'}
+[0.909302] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg\n'}
+[0.909359] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.909417] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/control_signal.h\n'}
+[0.909487] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail\n'}
+[0.909753] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__struct.h\n'}
+[0.910045] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__functions.h\n'}
+[0.910126] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__functions.h\n'}
+[0.910255] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__struct.h\n'}
+[0.910316] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__functions.c\n'}
+[0.910367] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__type_support.h\n'}
+[0.910485] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__type_support.h\n'}
+[0.910538] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__functions.c\n'}
+[0.910588] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/state.h\n'}
+[0.910639] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/library_path.sh\n'}
+[0.910695] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/library_path.dsv\n'}
+[0.910748] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_generator_c.so\n'}
+[0.910803] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node\n'}
+[0.910858] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg\n'}
+[0.910913] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail\n'}
+[0.910967] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_fastrtps_c.h\n'}
+[0.911023] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_fastrtps_c.h\n'}
+[0.911076] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.911156] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_fastrtps_c.so\n'}
+[0.911211] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node\n'}
+[0.911264] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg\n'}
+[0.911379] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.911433] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail\n'}
+[0.911486] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/dds_fastrtps\n'}
+[0.911607] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.911688] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.911741] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.911794] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node\n'}
+[0.911848] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg\n'}
+[0.911899] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.911952] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail\n'}
+[0.912005] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__type_support.c\n'}
+[0.912062] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_introspection_c.h\n'}
+[0.912110] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__type_support.c\n'}
+[0.912161] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_introspection_c.h\n'}
+[0.912209] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_introspection_c.so\n'}
+[0.912257] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_c.so\n'}
+[0.912363] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node\n'}
+[0.912454] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg\n'}
+[0.912505] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/state.hpp\n'}
+[0.912556] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/control_signal.hpp\n'}
+[0.912597] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail\n'}
+[0.912646] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__traits.hpp\n'}
+[0.912688] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__builder.hpp\n'}
+[0.912727] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__struct.hpp\n'}
+[0.912766] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__struct.hpp\n'}
+[0.912803] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__builder.hpp\n'}
+[0.912841] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__traits.hpp\n'}
+[0.912883] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node\n'}
+[0.912923] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg\n'}
+[0.912963] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail\n'}
+[0.913004] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.913043] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__type_support.cpp\n'}
+[0.913082] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/control_signal__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.913120] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/include/dynamics_node/msg/detail/state__type_support.cpp\n'}
+[0.913158] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_introspection_cpp.so\n'}
+[0.913196] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__rosidl_typesupport_cpp.so\n'}
+[0.913235] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/pythonpath.sh\n'}
+[0.913275] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/pythonpath.dsv\n'}
+[0.913314] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/__init__.py\n'}
+[0.933304] (dynamics_node) StdoutLine: {'line': b"Compiling '/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/__init__.py'...\n"}
+[0.935953] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg\n'}
+[0.936186] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_state_s.c\n'}
+[0.936297] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_control_signal_s.c\n'}
+[0.936369] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_control_signal.py\n'}
+[0.936411] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/_state.py\n'}
+[0.936452] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/msg/__init__.py\n'}
+[0.936633] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/dynamics_node_s__rosidl_typesupport_fastrtps_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.936862] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/dynamics_node_s__rosidl_typesupport_introspection_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.937367] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/python3.8/site-packages/dynamics_node/dynamics_node_s__rosidl_typesupport_c.cpython-38-x86_64-linux-gnu.so\n'}
+[0.937628] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/libdynamics_node__python.so\n'}
+[0.937778] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/ControlSignal.idl\n'}
+[0.937886] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/State.idl\n'}
+[0.937934] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/ControlSignal.msg\n'}
+[0.937975] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/msg/State.msg\n'}
+[0.938013] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/dynamics_node/dynamics\n'}
+[0.939546] (dynamics_node) StdoutLine: {'line': b'-- Set runtime path of "/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/lib/dynamics_node/dynamics" to ""\n'}
+[0.939639] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/package_run_dependencies/dynamics_node\n'}
+[0.939678] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/parent_prefix_path/dynamics_node\n'}
+[0.939756] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/ament_prefix_path.sh\n'}
+[0.939799] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/ament_prefix_path.dsv\n'}
+[0.939869] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/path.sh\n'}
+[0.939923] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/environment/path.dsv\n'}
+[0.939976] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.bash\n'}
+[0.940016] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.sh\n'}
+[0.940056] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.zsh\n'}
+[0.940102] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/local_setup.dsv\n'}
+[0.940139] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/package.dsv\n'}
+[0.940186] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/ament_index/resource_index/packages/dynamics_node\n'}
+[0.940230] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_generator_cExport.cmake\n'}
+[0.940277] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_generator_cExport-noconfig.cmake\n'}
+[0.940443] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cExport.cmake\n'}
+[0.940502] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[0.940636] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cExport.cmake\n'}
+[0.940690] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[0.940828] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_generator_cppExport.cmake\n'}
+[0.940943] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[0.940996] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[0.941138] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cppExport.cmake\n'}
+[0.941196] (dynamics_node) StdoutLine: {'line': b'-- Installing: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_node__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[0.941251] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/rosidl_cmake-extras.cmake\n'}
+[0.941302] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[0.941347] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[0.941420] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[0.941510] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[0.941548] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[0.941585] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[0.941623] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_nodeConfig.cmake\n'}
+[0.941658] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/cmake/dynamics_nodeConfig-version.cmake\n'}
+[0.941693] (dynamics_node) StdoutLine: {'line': b'-- Up-to-date: /workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node/share/dynamics_node/package.xml\n'}
+[0.943453] (dynamics_node) CommandEnded: {'returncode': 0}
+[1.001306] (-) TimerEvent: {}
+[1.044475] (dynamics_node) JobEnded: {'identifier': 'dynamics_node', 'rc': 0}
+[1.045217] (-) EventReactorShutdown: {}

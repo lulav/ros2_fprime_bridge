@@ -1,0 +1,9 @@
+In file included from [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/dynamics_node.hpp:15[m[K,
+                 from [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:1[m[K:
+[01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/../../../../../common/lulav_comm/udp/src/udp_client_server.hpp:12:11:[m[K [01;35m[Kwarning: [m[Knested namespace definitions only available with ‘[01m[K-std=c++17[m[K’ or ‘[01m[K-std=gnu++17[m[K’ [[01;35m[K-Wpedantic[m[K]
+   12 | namespace [01;35m[Klulav[m[K::comm::udp
+      |           [01;35m[K^~~~~[m[K
+[01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:[m[K In member function ‘[01m[Kvoid DynamicsNode::_cb_enable(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:22:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+   22 | void DynamicsNode::_cb_enable([01;35m[Kconst std_msgs::msg::Bool::SharedPtr msg[m[K)
+      |                               [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K

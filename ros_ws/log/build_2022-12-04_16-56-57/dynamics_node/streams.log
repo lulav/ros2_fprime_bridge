@@ -1,0 +1,56 @@
+[0.010s] Invoking command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node': /usr/bin/cmake /workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node -DCMAKE_INSTALL_PREFIX=/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node
+[0.050s] -- The C compiler identification is GNU 9.4.0
+[0.090s] -- The CXX compiler identification is GNU 9.4.0
+[0.093s] -- Check for working C compiler: /usr/bin/cc
+[0.153s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.153s] -- Detecting C compiler ABI info
+[0.223s] -- Detecting C compiler ABI info - done
+[0.232s] -- Detecting C compile features
+[0.232s] -- Detecting C compile features - done
+[0.234s] -- Check for working CXX compiler: /usr/bin/c++
+[0.297s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.297s] -- Detecting CXX compiler ABI info
+[0.364s] -- Detecting CXX compiler ABI info - done
+[0.372s] -- Detecting CXX compile features
+[0.372s] -- Detecting CXX compile features - done
+[0.374s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.392s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.392s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.488s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.514s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.517s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.554s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[0.569s] -- Found FastRTPS: /opt/ros/foxy/include  
+[0.613s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.650s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.650s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.651s] -- Looking for pthread.h
+[0.715s] -- Looking for pthread.h - found
+[0.715s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.771s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[0.771s] -- Looking for pthread_create in pthreads
+[0.832s] -- Looking for pthread_create in pthreads - not found
+[0.833s] -- Looking for pthread_create in pthread
+[0.884s] -- Looking for pthread_create in pthread - found
+[0.885s] -- Found Threads: TRUE  
+[0.987s] CMake Error at CMakeLists.txt:21 (find_package):
+[0.987s]   By not providing "Finddynamics_node.cmake" in CMAKE_MODULE_PATH this
+[0.987s]   project has asked CMake to find a package configuration file provided by
+[0.987s]   "dynamics_node", but CMake did not find one.
+[0.987s] 
+[0.988s]   Could not find a package configuration file provided by "dynamics_node"
+[0.988s]   with any of the following names:
+[0.988s] 
+[0.988s]     dynamics_nodeConfig.cmake
+[0.988s]     dynamics_node-config.cmake
+[0.988s] 
+[0.988s]   Add the installation prefix of "dynamics_node" to CMAKE_PREFIX_PATH or set
+[0.988s]   "dynamics_node_DIR" to a directory containing one of the above files.  If
+[0.988s]   "dynamics_node" provides a separate development package or SDK, be sure it
+[0.988s]   has been installed.
+[0.988s] 
+[0.988s] 
+[0.988s] -- Configuring incomplete, errors occurred!
+[0.988s] See also "/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node/CMakeFiles/CMakeOutput.log".
+[0.988s] See also "/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node/CMakeFiles/CMakeError.log".
+[0.992s] Invoked command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node' returned '1': /usr/bin/cmake /workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node -DCMAKE_INSTALL_PREFIX=/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node

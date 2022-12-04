@@ -1,0 +1,34 @@
+[0.010s] Invoking command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node -- -j20 -l20
+[0.049s] [  2%] Built target dynamics_node__cpp
+[0.049s] [ 12%] Built target dynamics_node__rosidl_generator_c
+[0.064s] [ 51%] Built target dynamics_node__rosidl_typesupport_introspection_cpp
+[0.064s] [ 51%] Built target dynamics_node__rosidl_typesupport_cpp
+[0.064s] [ 51%] Built target dynamics_node__rosidl_typesupport_introspection_c
+[0.064s] [ 51%] Built target dynamics_node__rosidl_typesupport_fastrtps_cpp
+[0.066s] [ 60%] Built target dynamics_node__rosidl_typesupport_c
+[0.079s] [ 70%] Built target dynamics_node__rosidl_typesupport_fastrtps_c
+[0.093s] [ 70%] Built target dynamics_node
+[0.105s] [35m[1mScanning dependencies of target dynamics[0m
+[0.111s] [ 73%] Built target dynamics_node__py
+[0.124s] [ 75%] [32mBuilding CXX object CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o[0m
+[0.128s] [ 82%] Built target dynamics_node__python
+[0.149s] [ 97%] Built target dynamics_node__rosidl_typesupport_fastrtps_c__pyext
+[0.149s] [ 97%] Built target dynamics_node__rosidl_typesupport_c__pyext
+[0.149s] [ 97%] Built target dynamics_node__rosidl_typesupport_introspection_c__pyext
+[0.855s] In file included from [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/dynamics_node.hpp:15[m[K,
+[0.855s]                  from [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:1[m[K:
+[0.855s] [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/../include/dynamics_node/../../../../../common/lulav_comm/udp/src/udp_client_server.hpp:12:11:[m[K [01;35m[Kwarning: [m[Knested namespace definitions only available with ‘[01m[K-std=c++17[m[K’ or ‘[01m[K-std=gnu++17[m[K’ [[01;35m[K-Wpedantic[m[K]
+[0.855s]    12 | namespace [01;35m[Klulav[m[K::comm::udp
+[0.855s]       |           [01;35m[K^~~~~[m[K
+[0.880s] [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:[m[K In member function ‘[01m[Kvoid DynamicsNode::_cb_enable(std_msgs::msg::Bool_<std::allocator<void> >::SharedPtr)[m[K’:
+[0.881s] [01m[K/workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node/src/dynamics_node.cpp:46:68:[m[K [01;35m[Kwarning: [m[Kunused parameter ‘[01m[Kmsg[m[K’ [[01;35m[K-Wunused-parameter[m[K]
+[0.881s]    46 | void DynamicsNode::_cb_enable([01;35m[Kconst std_msgs::msg::Bool::SharedPtr msg[m[K)
+[0.881s]       |                               [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~[m[K
+[3.465s] [100%] [32m[1mLinking CXX executable dynamics[0m
+[3.614s] /usr/bin/ld: CMakeFiles/dynamics.dir/src/dynamics_node.cpp.o: in function `DynamicsNode::dynamics_first_step()':
+[3.614s] dynamics_node.cpp:(.text+0xa8b): undefined reference to `Dynamics::Dynamics()'
+[3.622s] collect2: error: ld returned 1 exit status
+[3.624s] make[2]: *** [CMakeFiles/dynamics.dir/build.make:132: dynamics] Error 1
+[3.624s] make[1]: *** [CMakeFiles/Makefile2:249: CMakeFiles/dynamics.dir/all] Error 2
+[3.624s] make: *** [Makefile:141: all] Error 2
+[3.626s] Invoked command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node' returned '2': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node -- -j20 -l20

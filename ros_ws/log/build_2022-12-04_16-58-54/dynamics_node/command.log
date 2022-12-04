@@ -1,0 +1,2 @@
+Invoking command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node': /usr/bin/cmake /workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node -DCMAKE_INSTALL_PREFIX=/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node
+Invoked command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node' returned '1': /usr/bin/cmake /workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node -DCMAKE_INSTALL_PREFIX=/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node

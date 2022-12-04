@@ -1,0 +1,32 @@
+[0.010s] Invoking command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node': /usr/bin/cmake /workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node -DCMAKE_INSTALL_PREFIX=/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node
+[0.021s] -- Found ament_cmake: 0.9.11 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.038s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.038s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.125s] -- Found rclcpp: 2.4.2 (/opt/ros/foxy/share/rclcpp/cmake)
+[0.144s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.146s] -- Found rosidl_adapter: 1.3.0 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[0.205s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.238s] -- Found rmw_implementation_cmake: 1.0.3 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[0.239s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.332s] -- Found rosidl_default_generators: 1.0.1 (/opt/ros/foxy/share/rosidl_default_generators/cmake)
+[0.340s] CMake Error at CMakeLists.txt:22 (find_package):
+[0.340s]   By not providing "Finddynamics_node.cmake" in CMAKE_MODULE_PATH this
+[0.340s]   project has asked CMake to find a package configuration file provided by
+[0.340s]   "dynamics_node", but CMake did not find one.
+[0.340s] 
+[0.341s]   Could not find a package configuration file provided by "dynamics_node"
+[0.341s]   with any of the following names:
+[0.341s] 
+[0.341s]     dynamics_nodeConfig.cmake
+[0.341s]     dynamics_node-config.cmake
+[0.341s] 
+[0.341s]   Add the installation prefix of "dynamics_node" to CMAKE_PREFIX_PATH or set
+[0.341s]   "dynamics_node_DIR" to a directory containing one of the above files.  If
+[0.341s]   "dynamics_node" provides a separate development package or SDK, be sure it
+[0.341s]   has been installed.
+[0.341s] 
+[0.341s] 
+[0.341s] -- Configuring incomplete, errors occurred!
+[0.341s] See also "/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node/CMakeFiles/CMakeOutput.log".
+[0.341s] See also "/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node/CMakeFiles/CMakeError.log".
+[0.345s] Invoked command in '/workspaces/ros2_fprime_bridge/ros_ws/build/dynamics_node' returned '1': /usr/bin/cmake /workspaces/ros2_fprime_bridge/ros_ws/src/dynamics_node -DCMAKE_INSTALL_PREFIX=/workspaces/ros2_fprime_bridge/ros_ws/install/dynamics_node

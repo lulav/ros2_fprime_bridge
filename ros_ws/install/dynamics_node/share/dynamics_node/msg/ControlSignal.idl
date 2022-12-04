@@ -1,0 +1,12 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from dynamics_node/msg/ControlSignal.msg
+// generated code does not contain a copyright notice
+
+
+module dynamics_node {
+  module msg {
+    struct ControlSignal {
+      float u;
+    };
+  };
+};

@@ -1,5 +1,10 @@
 {
     "cSpell.words": [
-        "lulav"
-    ]
+        "lulav",
+        "rclcpp"
+    ],
+    "files.associations": {
+        "chrono": "cpp",
+        "random": "cpp"
+    }
 }
