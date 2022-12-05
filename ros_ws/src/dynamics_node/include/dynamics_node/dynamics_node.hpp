@@ -28,11 +28,10 @@ class DynamicsNode : public rclcpp::Node
 {
 
   public:
-
-      void init_ros();
-      
       DynamicsNode();
       ~DynamicsNode();
+
+      Dynamics dynamics;
 
       bool first_step = false;
 
@@ -47,9 +46,16 @@ class DynamicsNode : public rclcpp::Node
     size_t _count;
 
     void _cb_enable(const std_msgs::msg::Bool::SharedPtr msg);
-
+    void _init_ros();
     void _dynamics_first_step(Dynamics &dynamics, state &dynamics_output, control_signal &dynamics_input);
     void _publish_to_ros(state &dynamics_output, control_signal &dynamics_input);
+    void _get_parameters();
+
+    rclcpp::Parameter _m;
+    rclcpp::Parameter _k;
+    rclcpp::Parameter _c;
+    rclcpp::Parameter _r0;
+    rclcpp::Parameter _v0;
     
     rclcpp::Publisher<dynamics_node::msg::State>::SharedPtr _pub_state;
     rclcpp::Publisher<dynamics_node::msg::ControlSignal>::SharedPtr _pub_controller;
