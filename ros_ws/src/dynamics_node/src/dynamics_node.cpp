@@ -1,12 +1,22 @@
 #include "../include/dynamics_node/dynamics_node.hpp"
 
+using namespace lulav::comm::udp;
+
 DynamicsNode::DynamicsNode(): 
 Node("dynamics"), _count(0)
 {
     RCLCPP_INFO(get_logger(), "Initiate Dynamics node ...");
     _init_ros();
     _get_parameters();
+    RCLCPP_INFO(get_logger(), "Parameters: [m, k, c, r0, v0] = [%.2f, %.2f, %.2f, %.2f, %.2f]",
+                            _m.as_double(), _k.as_double(), _c.as_double(), _r0.as_double(), _v0.as_double());
+
     dynamics.set_parameters(_m.as_double(), _k.as_double(), _c.as_double(), _r0.as_double(), _v0.as_double());
+    
+     RCLCPP_INFO(get_logger(), "ros2_bridge: opening UDP sockets... ");
+    _udp_client = std::make_shared<client>("0.0.0.0", CLIENT_PORT);
+    _udp_server = std::make_shared<server>("0.0.0.0", SERVER_PORT);
+    RCLCPP_INFO(get_logger(), "Done. listening on port %d\n", SERVER_PORT);
 }
 
 DynamicsNode::~DynamicsNode()
