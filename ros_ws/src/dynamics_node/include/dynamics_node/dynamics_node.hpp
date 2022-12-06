@@ -47,7 +47,7 @@ class DynamicsNode : public rclcpp::Node
 
     void _cb_enable(const std_msgs::msg::Bool::SharedPtr msg);
     void _init_ros();
-    void _dynamics_first_step(Dynamics &dynamics, state &dynamics_output, control_signal &dynamics_input);
+    void _dynamics_first_step(Dynamics &dynamics, state &dynamics_output, control_signal &dynamics_input, proto_spring::state &proto_state);
     void _publish_to_ros(state &dynamics_output, control_signal &dynamics_input);
     void _get_parameters();
 

@@ -4,13 +4,9 @@ DynamicsNode::DynamicsNode():
 Node("dynamics"), _count(0)
 {
     RCLCPP_INFO(get_logger(), "Initiate Dynamics node ...");
-
     _init_ros();
-
     _get_parameters();
-
     dynamics.set_parameters(_m.as_double(), _k.as_double(), _c.as_double(), _r0.as_double(), _v0.as_double());
-
 }
 
 DynamicsNode::~DynamicsNode()
@@ -40,13 +36,20 @@ void DynamicsNode::_get_parameters()
     _v0 = this->get_parameter("v0");
 }
 
-void DynamicsNode::_dynamics_first_step(Dynamics &dynamics, state &dynamics_output, control_signal &dynamics_input)
+void DynamicsNode::_dynamics_first_step(Dynamics &dynamics, state &dynamics_output, control_signal &dynamics_input, proto_spring::state &proto_state)
 {
     dynamics_input.u = 0.0;
 
     dynamics.set_inputs(dynamics_input);
     dynamics.step();
     dynamics.get_outputs(dynamics_output);
+
+    proto_state.set_r(dynamics_output.r);
+    proto_state.set_v(dynamics_output.v);
+
+    proto_state.SerializeToArray(_dynamics_buff, STATE_MESSAGE_SIZE);
+
+    _udp_client.get()->send(_dynamics_buff, STATE_MESSAGE_SIZE);
 }
 
 void DynamicsNode::_publish_to_ros(state &dynamics_output, control_signal &dynamics_input)
@@ -72,15 +75,7 @@ void DynamicsNode::_cb_enable(const std_msgs::msg::Bool::SharedPtr msg)
 
     if (first_step)
     {
-      _dynamics_first_step(dynamics, dynamics_output, dynamics_input);
-
-      proto_state.set_r(dynamics_output.r);
-      proto_state.set_v(dynamics_output.v);
-
-      proto_state.SerializeToArray(_dynamics_buff, STATE_MESSAGE_SIZE);
-
-      _udp_client.get()->send(_dynamics_buff, STATE_MESSAGE_SIZE);
-
+      _dynamics_first_step(dynamics, dynamics_output, dynamics_input, proto_state);
       first_step = false;
       return;
     }
