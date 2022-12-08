@@ -31,25 +31,25 @@ class DynamicsNode : public rclcpp::Node
       DynamicsNode();
       ~DynamicsNode();
 
-      Dynamics dynamics;
-
-      bool first_step = true;
-
-      std::shared_ptr<lulav::comm::udp::client> _udp_client;
-      std::shared_ptr<lulav::comm::udp::server> _udp_server;
-
-      char _controller_buff[CONTROL_MESSAGE_SIZE];
-      char _dynamics_buff[STATE_MESSAGE_SIZE];
-
   private:
 
     size_t _count;
 
-    void _cb_enable(const std_msgs::msg::Bool::SharedPtr msg);
-    void _init_ros();
-    void _dynamics_first_step(Dynamics &dynamics, state &dynamics_output, control_signal &dynamics_input, proto_spring::state &proto_state);
-    void _publish_to_ros(state &dynamics_output, control_signal &dynamics_input);
-    void _get_parameters();
+    Dynamics _dynamics;
+
+    bool first_step = true;
+
+    std::shared_ptr<lulav::comm::udp::client> _udp_client;
+    std::shared_ptr<lulav::comm::udp::server> _udp_server;
+
+    char _controller_buff[CONTROL_MESSAGE_SIZE];
+    char _dynamics_buff[STATE_MESSAGE_SIZE];
+
+    void init_ros();
+    void init_parameters();
+    void dynamics_first_step();
+    void cb_enable(const std_msgs::msg::Bool::SharedPtr msg);
+    void publish_to_ros(state &dynamics_output, control_signal &dynamics_input);
 
     rclcpp::Parameter _m;
     rclcpp::Parameter _k;
