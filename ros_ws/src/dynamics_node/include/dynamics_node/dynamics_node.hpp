@@ -33,7 +33,7 @@ class DynamicsNode : public rclcpp::Node
 
       Dynamics dynamics;
 
-      bool first_step = false;
+      bool first_step = true;
 
       std::shared_ptr<lulav::comm::udp::client> _udp_client;
       std::shared_ptr<lulav::comm::udp::server> _udp_server;
