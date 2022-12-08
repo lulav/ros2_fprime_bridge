@@ -51,6 +51,10 @@ namespace spring {
     ::control_signal controller_output;
     spring::control_signal dynamics_input;
 
+    // debug
+    // tlmWrite_v(state_input.getv());
+    // tlmWrite_r(state_input.getr());
+
     copy_to_controller_input(state_input, controller_input);
 
     _controller.set_inputs(controller_input);
@@ -68,7 +72,7 @@ namespace spring {
   }
 
   void controller_comp::copy_to_controller_input(const spring::state &state_input,
-                                                 ::state controller_input)
+                                                 ::state& controller_input)
   {
     controller_input.r = state_input.getr();
     controller_input.v = state_input.getv();

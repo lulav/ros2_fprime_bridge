@@ -44,7 +44,7 @@ namespace spring {
       Controller _controller;
 
       void copy_to_controller_input(const spring::state &state_input,
-                                    ::state controller_input);
+                                    ::state& controller_input);
                                     
       void copy_from_controller_output(const ::control_signal& controller_output,
                                        spring::control_signal& dynamics_input);
