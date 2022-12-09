@@ -79,5 +79,8 @@ RUN . /tmp/fprime-venv/bin/activate && python3 -m pip install -U -r fprime/requi
 RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt-get update
 RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
+RUN rm google-chrome-stable_current_amd64.deb
 
 RUN echo "source /opt/ros/foxy/setup.bash" >> /home/$USERNAME/.bashrc
+RUN echo "source /tmp/fprime-venv/bin/activate" >> /home/$USERNAME/.bashrc
+RUN chown -R $USERNAME:$USERNAME /app/fprime
