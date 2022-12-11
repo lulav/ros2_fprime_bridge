@@ -20,9 +20,29 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(dynamics_node REQUIRED)
+find_package(Protobuf REQUIRED)
+
+# build the protobuf messages
+set(SCHEMAS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../common/autogen/schemas/spring")
+set(PROTO_VERSION "proto3")
+
+set(PROTO_DYN "${SCHEMAS_DIR}/${PROTO_VERSION}/*.proto")
+
+file(GLOB_RECURSE ProtoFiles "${PROTO_DYN}")
+PROTOBUF_GENERATE_CPP(ProtoSources ProtoHeaders ${ProtoFiles})
+add_library(proto STATIC ${ProtoSources} ${ProtoHeaders})
+target_link_libraries(proto ${PROTOBUF_LIBRARY})
+
+# add udp files
+set(UDP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../common/lulav_comm/udp/src")
+set(UDP_FILES ${UDP_DIR}/udp_client.cpp ${UDP_DIR}/udp_server.cpp)
+add_library(udp STATIC ${UDP_FILES})
 
 add_executable(bridge src/bridge.cpp)
 ament_target_dependencies(bridge rclcpp std_msgs dynamics_node)
+
+target_link_libraries(bridge udp)
+target_link_libraries(bridge proto)
 
 install(TARGETS
   bridge
