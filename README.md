@@ -4,7 +4,7 @@ This repository provides a simple and convenient way to bridge the gap between F
 
 The user needs to define the messages going back and forth between the two frameworks by writing cpp headers that define the structures that make up the messages.
 
-The cpp headers are used as the source by which all communication messages are defined for all interface description languages. A Python script parses the headers, and generates schema files for:
+The cpp headers are used as the source by which all communication messages are defined for all interface description languages. A python script parses the headers, and generates schema files for:
 - F` (.fpp)
 - ROS (.msg)
 - Protobuf (.proto, version 2 and 3)
@@ -25,12 +25,12 @@ since everything is run inside a Docker container, the only two prerequisites ar
 ## Build the spring example
 Before you begin, make sure that within Visual Studio Code, you've opened the working directory inside a [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers).
 
-### generate schema files and ProtoBuff code:
+### generate schema files and ProtoBuf code:
 
     cd common/autogen
     python3 compile.py spring_defs.json
     protoc -I=schemas/spring/proto3 --cpp_out=./schemas/spring/proto3 spring.proto
-**Note**: the protoc compiler is actually runs automatically as part of the build process in the spring example (both on the FPrime and ROS2 builds). See the `CMakeLists.txt` files of the bridge component/node.
+**Note**: the protoc compiler actually runs automatically as part of the build process in the spring example (both on the FPrime and ROS2 builds). See the `CMakeLists.txt` files of the bridge component/node.
 
 ### build the ROS2 project:
 
@@ -57,6 +57,6 @@ At this point, if you open the charts tab in the GDS GUI and choose `the_control
 
 ![GDS screenshot](png/screenshot_gds.png "spring mass dumper")
 
-In addition, if you open a ROS2 viewer, e.g. Foxglove, you should also see a similar visualization:
+In addition, if you open a ROS2 viewer, e.g. [Foxglove](https://foxglove.dev/download), you should also see a similar visualization:
 
 ![Foxglove screenshot](png/screenshot_foxglove.png "spring mass dumper")
