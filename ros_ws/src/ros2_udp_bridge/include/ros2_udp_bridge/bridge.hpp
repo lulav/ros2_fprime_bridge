@@ -46,8 +46,8 @@ class Bridge : public rclcpp::Node
     char _dynamics_buff[STATE_MESSAGE_SIZE];
 
     void init_ros();
-    void _proto_to_ros();
-    void _ros_to_proto(const dynamics_node::msg::State::SharedPtr msg);
+    void proto_to_ros();
+    void ros_to_proto(const dynamics_node::msg::State::SharedPtr msg);
     void reading_work();
     
     rclcpp::Subscription<dynamics_node::msg::State>::SharedPtr _sub_state;

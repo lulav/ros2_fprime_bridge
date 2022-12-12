@@ -29,34 +29,33 @@ void Bridge::reading_work()
     
     while(_keep_reading)
     {
-      _proto_to_ros();
+      proto_to_ros();
     }
 }
 
-void Bridge::_proto_to_ros()
+void Bridge::proto_to_ros()
 {
-      dynamics_node::msg::ControlSignal ctrl_msg;
-      proto_spring::control_signal proto_u;
+      dynamics_node::msg::ControlSignal msg_ctrl;
+      proto_spring::control_signal proto_ctrl;
 
       _udp_server->recv(_controller_buff, CONTROL_MESSAGE_SIZE);
-      proto_u.ParseFromArray(_controller_buff, CONTROL_MESSAGE_SIZE);
-      ctrl_msg.u = proto_u.u();
+      proto_ctrl.ParseFromArray(_controller_buff, CONTROL_MESSAGE_SIZE);
+      msg_ctrl.u = proto_ctrl.u();
 
-      _pub_controller.get()->publish(ctrl_msg);
+      _pub_controller.get()->publish(msg_ctrl);
 }
 
 void Bridge::init_ros()
 {
     _sub_state = this->create_subscription<dynamics_node::msg::State>("/state",
-                      1, std::bind(&Bridge::_ros_to_proto, this, std::placeholders::_1));
+                      1, std::bind(&Bridge::ros_to_proto, this, std::placeholders::_1));
 
     _pub_controller = this->create_publisher<dynamics_node::msg::ControlSignal>("/control_signal",
                       1);
 }
 
-void Bridge::_ros_to_proto(const dynamics_node::msg::State::SharedPtr msg)
+void Bridge::ros_to_proto(const dynamics_node::msg::State::SharedPtr msg)
 {
-
     proto_spring::state proto_state;
     proto_state.Clear();
 

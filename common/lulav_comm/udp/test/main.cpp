@@ -38,7 +38,7 @@ int main()
         server parent_receiver("127.0.0.1", 42000);
 
         char buff[64];
-        int ret = parent_receiver.timed_recv(buff, 64, 500);
+        int ret = parent_receiver.recv(buff, 64);
 
         if(ret != -1)
             printf("Parent process: got the following message from child: %s", buff);

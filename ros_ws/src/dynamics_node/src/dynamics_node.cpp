@@ -15,16 +15,15 @@ Node("dynamics"), _count(0)
                              _v0.as_double());
     RCLCPP_INFO(get_logger(), 
                 "Parameters: [m, k, c, r0, v0] = [%.2f, %.2f, %.2f, %.2f, %.2f]",
-                            _m.as_double(), 
-                            _k.as_double(), 
-                            _c.as_double(), 
-                            _r0.as_double(), 
-                            _v0.as_double());
+                _m.as_double(), 
+                _k.as_double(), 
+                _c.as_double(), 
+                _r0.as_double(), 
+                _v0.as_double());
 }
 
 DynamicsNode::~DynamicsNode()
 {
-  return;
 }
 
 void DynamicsNode::init_ros()
@@ -59,7 +58,6 @@ void DynamicsNode::dynamics_first_step()
     _dynamics.set_inputs(dynamics_input);
     _dynamics.step();
     _dynamics.get_outputs(dynamics_output);
-
 }
 
 void DynamicsNode::publish_to_ros(state &dynamics_output)
