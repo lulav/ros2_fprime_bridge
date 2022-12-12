@@ -35,17 +35,20 @@ class Bridge : public rclcpp::Node
 
     size_t _count;
 
-    rclcpp::TimerBase::SharedPtr _timer;
-
     std::shared_ptr<lulav::comm::udp::client> _udp_client;
     std::shared_ptr<lulav::comm::udp::server> _udp_server;
+
+    std::shared_ptr<std::thread> _reader_thread;
+
+    bool _keep_reading = true;
 
     char _controller_buff[CONTROL_MESSAGE_SIZE];
     char _dynamics_buff[STATE_MESSAGE_SIZE];
 
     void init_ros();
-    void _udp_to_ros();
-    void _ros_to_udp(const dynamics_node::msg::State::SharedPtr msg);
+    void _proto_to_ros();
+    void _ros_to_proto(const dynamics_node::msg::State::SharedPtr msg);
+    void reading_work();
     
     rclcpp::Subscription<dynamics_node::msg::State>::SharedPtr _sub_state;
     rclcpp::Publisher<dynamics_node::msg::ControlSignal>::SharedPtr _pub_controller;
