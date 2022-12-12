@@ -20,6 +20,12 @@ def generate_launch_description():
             parameters = [dynamics_config]
         ),
         Node(
+            package='ros2_udp_bridge',
+            executable='bridge',
+            name='bridge',
+            output='screen',
+        ),
+        Node(
             package='scheduler',
             executable='scheduler',
             name='scheduler',

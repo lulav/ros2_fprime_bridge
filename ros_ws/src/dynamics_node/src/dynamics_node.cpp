@@ -1,7 +1,5 @@
 #include "../include/dynamics_node/dynamics_node.hpp"
 
-using namespace lulav::comm::udp;
-
 DynamicsNode::DynamicsNode(): 
 Node("dynamics"), _count(0)
 {
@@ -10,6 +8,11 @@ Node("dynamics"), _count(0)
     init_ros();
     init_parameters();
 
+    _dynamics.set_parameters(_m.as_double(), 
+                             _k.as_double(), 
+                             _c.as_double(), 
+                             _r0.as_double(), 
+                             _v0.as_double());
     RCLCPP_INFO(get_logger(), 
                 "Parameters: [m, k, c, r0, v0] = [%.2f, %.2f, %.2f, %.2f, %.2f]",
                 _m.as_double(), 
@@ -17,29 +20,17 @@ Node("dynamics"), _count(0)
                 _c.as_double(), 
                 _r0.as_double(), 
                 _v0.as_double());
-
-    _dynamics.set_parameters(_m.as_double(), 
-                             _k.as_double(), 
-                             _c.as_double(), 
-                             _r0.as_double(), 
-                             _v0.as_double());
-    
-    RCLCPP_INFO(get_logger(), "ros2_bridge: opening UDP sockets... ");
-    _udp_client = std::make_shared<client>("0.0.0.0", CLIENT_PORT);
-    _udp_server = std::make_shared<server>("0.0.0.0", SERVER_PORT);
-    RCLCPP_INFO(get_logger(), "Done. listening on port %d\n", SERVER_PORT);
 }
 
 DynamicsNode::~DynamicsNode()
 {
-  return;
 }
 
 void DynamicsNode::init_ros()
 {
     _pub_state = this->create_publisher<dynamics_node::msg::State>("/state", 1);
-    _pub_controller = this->create_publisher<dynamics_node::msg::ControlSignal>("/control_signal", 1);
-    _sub_enable = this->create_subscription<std_msgs::msg::Bool>("/enable",1, std::bind(&DynamicsNode::cb_enable, this, std::placeholders::_1));
+    _sub_controller = this->create_subscription<dynamics_node::msg::ControlSignal>("/control_signal",1, std::bind(&DynamicsNode::cb_get_control_signal, this, std::placeholders::_1));
+    _sub_enable = this->create_subscription<std_msgs::msg::Bool>("/enable",1, std::bind(&DynamicsNode::cb_get_enable_signal, this, std::placeholders::_1));
 }
 
 void DynamicsNode::init_parameters()
@@ -61,48 +52,34 @@ void DynamicsNode::dynamics_first_step()
 {
     state dynamics_output;
     control_signal dynamics_input;
-    proto_spring::state proto_state;
-
-    proto_state.Clear();
 
     dynamics_input.u = 0.0;
 
     _dynamics.set_inputs(dynamics_input);
     _dynamics.step();
     _dynamics.get_outputs(dynamics_output);
-
-    proto_state.set_r(dynamics_output.r);
-    proto_state.set_v(dynamics_output.v);
-
-    proto_state.SerializeToArray(_dynamics_buff, STATE_MESSAGE_SIZE);
-
-    _udp_client->send(_dynamics_buff, STATE_MESSAGE_SIZE);
 }
 
-void DynamicsNode::publish_to_ros(state &dynamics_output, control_signal &dynamics_input)
+void DynamicsNode::publish_to_ros(state &dynamics_output)
 {
-      dynamics_node::msg::State dyn_msg;
-      dynamics_node::msg::ControlSignal ctrl_msg;
+    dynamics_node::msg::State dyn_msg;
 
-      dyn_msg.r = dynamics_output.r;
-      dyn_msg.v = dynamics_output.v;
-      ctrl_msg.u = dynamics_input.u;
+    dyn_msg.r = dynamics_output.r;
+    dyn_msg.v = dynamics_output.v;
 
-      _pub_state.get()->publish(dyn_msg);
-      _pub_controller.get()->publish(ctrl_msg);
+    _pub_state.get()->publish(dyn_msg);
 }
 
-void DynamicsNode::cb_enable(const std_msgs::msg::Bool::SharedPtr msg)
+void DynamicsNode::cb_get_control_signal(const dynamics_node::msg::ControlSignal::SharedPtr msg)
+{
+    _u = msg.get()->u;
+}
+
+void DynamicsNode::cb_get_enable_signal(const std_msgs::msg::Bool::SharedPtr msg)
 {
     state dynamics_output;
     control_signal dynamics_input;
 
-    proto_spring::control_signal proto_u;
-    proto_spring::state proto_state;
-
-    proto_state.Clear();
-    proto_u.Clear();
-    
     if (first_step)
     {
       dynamics_first_step();
@@ -110,24 +87,13 @@ void DynamicsNode::cb_enable(const std_msgs::msg::Bool::SharedPtr msg)
       return;
     }
 
-    _udp_server->recv(_controller_buff, CONTROL_MESSAGE_SIZE);
-
-    proto_u.ParseFromArray(_controller_buff, CONTROL_MESSAGE_SIZE);
-
-    dynamics_input.u = proto_u.u();
+    dynamics_input.u = _u;
     
     _dynamics.set_inputs(dynamics_input);
     _dynamics.step();
     _dynamics.get_outputs(dynamics_output);
 
-    proto_state.set_r(dynamics_output.r);
-    proto_state.set_v(dynamics_output.v);
-
-    proto_state.SerializeToArray(_dynamics_buff, STATE_MESSAGE_SIZE);
-
-    _udp_client->send(_dynamics_buff, STATE_MESSAGE_SIZE);
-
-    publish_to_ros(dynamics_output, dynamics_input);
+    publish_to_ros(dynamics_output);
     
     RCL_UNUSED(msg);
 }

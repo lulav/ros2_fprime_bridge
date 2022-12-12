@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(dynamics_node)
+project(ros2_udp_bridge)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -18,13 +18,9 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(rosidl_default_generators REQUIRED)
+find_package(std_msgs REQUIRED)
+find_package(dynamics_node REQUIRED)
 find_package(Protobuf REQUIRED)
-
-rosidl_generate_interfaces(${PROJECT_NAME}
-  "msg/ControlSignal.msg"
-  "msg/State.msg"
-)
 
 # build the protobuf messages
 set(SCHEMAS_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../common/autogen/schemas/spring")
@@ -42,27 +38,15 @@ set(UDP_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../common/lulav_comm/udp/src")
 set(UDP_FILES ${UDP_DIR}/udp_client.cpp ${UDP_DIR}/udp_server.cpp)
 add_library(udp STATIC ${UDP_FILES})
 
-# add spring dynamics files
-set(EXAMPLE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../../../examples/spring_mass_dumper/src")
-set(EXAMPLE_FILES ${EXAMPLE_DIR}/dynamics.cpp)
-add_library(example STATIC ${EXAMPLE_FILES})
+add_executable(bridge src/bridge.cpp)
+ament_target_dependencies(bridge rclcpp std_msgs dynamics_node)
 
-add_executable(dynamics src/dynamics_node.cpp)
-ament_target_dependencies(dynamics rclcpp)
-
-rosidl_target_interfaces(dynamics ${PROJECT_NAME} "rosidl_typesupport_cpp")
-
-target_link_libraries(dynamics example)
-target_link_libraries(dynamics udp)
-target_link_libraries(dynamics proto)
+target_link_libraries(bridge udp)
+target_link_libraries(bridge proto)
 
 install(TARGETS
-  dynamics
+  bridge
   DESTINATION lib/${PROJECT_NAME})
-
-install(DIRECTORY
-  config
-  DESTINATION share/${PROJECT_NAME})
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)

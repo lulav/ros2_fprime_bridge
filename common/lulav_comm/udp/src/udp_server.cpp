@@ -65,31 +65,4 @@ int server::recv(char *msg, size_t max_size)
     return ::recv(_socket, msg, max_size, 0);
 }
 
-int server::timed_recv(char *msg, size_t max_size, int max_wait_ms)
-{
-    fd_set s;
-    FD_ZERO(&s);
-    FD_SET(_socket, &s);
-    
-    struct timeval timeout;
-    timeout.tv_sec = max_wait_ms / 1000;
-    timeout.tv_usec = (max_wait_ms % 1000) * 1000;
-    
-    int retval = select(_socket + 1, &s, &s, &s, &timeout);
-    if(retval == -1)
-    {
-        // select() set errno accordingly
-        return -1;
-    }
-    if(retval > 0)
-    {
-        // our socket has data
-        return ::recv(_socket, msg, max_size, 0);
-    }
-
-    // our socket has no data
-    errno = EAGAIN;
-    return -1;
-}
-
 } // namespace lulav::comm::udp

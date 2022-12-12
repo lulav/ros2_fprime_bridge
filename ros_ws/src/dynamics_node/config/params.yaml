@@ -1,6 +1,6 @@
 dynamics:
   ros__parameters:
-    m: 10.0
+    m: 1.0
     k: 2.5
     c: 0.3
     r0: -1.0
