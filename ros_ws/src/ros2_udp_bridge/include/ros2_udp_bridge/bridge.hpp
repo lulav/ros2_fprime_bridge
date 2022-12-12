@@ -20,6 +20,8 @@
 #define SERVER_PORT 42000
 #define CLIENT_PORT 69000
 
+#define BRIDGE_WORKING_TIME 10ms
+
 using namespace std::chrono_literals;
 
 class Bridge : public rclcpp::Node
@@ -32,6 +34,8 @@ class Bridge : public rclcpp::Node
   private:
 
     size_t _count;
+
+    rclcpp::TimerBase::SharedPtr _timer;
 
     std::shared_ptr<lulav::comm::udp::client> _udp_client;
     std::shared_ptr<lulav::comm::udp::server> _udp_server;

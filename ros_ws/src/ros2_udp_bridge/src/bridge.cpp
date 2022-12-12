@@ -22,6 +22,9 @@ Bridge::~Bridge()
 
 void Bridge::init_ros()
 {
+
+      _timer = this->create_wall_timer(
+      BRIDGE_WORKING_TIME, std::bind(&Bridge::_udp_to_ros, this));
     _sub_state = this->create_subscription<dynamics_node::msg::State>("/state",
                       1, std::bind(&Bridge::_ros_to_udp, this, std::placeholders::_1));
 
