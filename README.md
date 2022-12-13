@@ -3,11 +3,8 @@
 This repository provides a simple and convenient way to bridge the gap between FPrime and ROS2 when such integration is required, by using [ProtoBuf]((https://developers.google.com/protocol-buffers)) messages as an intermediary between the two frameworks. This solution enables a complete decoupling between the two frameworks, and actually can be used to integrate FPrime or ROS2 with any other framework.
 
 ```mermaid
-graph LR
-
-A[F`] <-->|ProtoBuf| B
-
-B[ROS2]
+flowchart LR
+A[F`] <--> |ProtoBuf| B[ROS2]
 ```
 
 # How it works
