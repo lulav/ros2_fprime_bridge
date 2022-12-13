@@ -53,7 +53,8 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
 ### generate schema files and ProtoBuf code:
 
     cd common/autogen
-    python3 compile.py spring_defs.json
+    chmod +x compile.py
+    ./compile.py spring_defs.json
     protoc -I=schemas/spring/proto3 --cpp_out=./schemas/spring/proto3 spring.proto
 **Note**: the protoc compiler actually runs automatically as part of the build process in the spring example (both on the FPrime and ROS2 builds). See the `CMakeLists.txt` files of the bridge component/node.
 
@@ -87,7 +88,7 @@ In addition, if you open a ROS2 viewer, e.g. [Foxglove](https://foxglove.dev/dow
 
 ![Foxglove screenshot](png/screenshot_foxglove.png "spring mass dumper")
 
-# Feedback
+## Feedback
 Please send your questions, bug reports and suggestions to `shalev@lulav.space`.
 
 Your flattery and hard earned cash are also welcome ;) 
