@@ -1,13 +1,23 @@
 # ROS2-FPrime Bridge
 
-This repository provides a simple and convenient way to bridge the gap between FPrime and ROS2 when such integration is required. This solution enables a complete decoupling between the two frameworks, and actually can be used to integrate FPrime or ROS2 with any other framework.
+This repository provides a simple and convenient way to bridge the gap between FPrime and ROS2 when such integration is required, by using [ProtoBuf]((https://developers.google.com/protocol-buffers)) messages as an intermediary between the two frameworks. This solution enables a complete decoupling between the two frameworks, and actually can be used to integrate FPrime or ROS2 with any other framework.
 
-The user needs to define the messages going back and forth between the two frameworks by writing cpp headers that define the structures that make up the messages.
+```mermaid
+graph LR
 
-The cpp headers are used as the source by which all communication messages are defined for all interface description languages. A python script parses the headers, and generates schema files for:
-- F` (.fpp)
-- ROS (.msg)
-- [Protobuf](https://developers.google.com/protocol-buffers) (.proto, version 2 and 3)
+A[F`] <-->|ProtoBuf| B
+
+B[ROS2]
+```
+
+# How it works
+
+The user needs to define the messages going back and forth between the two frameworks by writing cpp [headers](examples/spring_mass_dumper/include/io_structs.hpp) that define the structures that make up the messages.
+
+The cpp headers are used as the source by which all communication messages are defined for all interface description languages. A python [script](common/autogen/compile.py) parses the headers, and generates schema files for:
+- FPrime (`.fpp`)
+- ROS (`.msg`)
+- Protobuf (`.proto`, version 2 and 3)
 
 For further details of the usage of the python script see the dedicated [README](common/autogen/README.md).
 
