@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  dynamics:
+    image: lulav/spring_mass_example:v1.0
+    network_mode: "host"
+    command: bash -c "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch scheduler simulator.launch.py"
+    stdin_open: true
+    tty: true
+    ipc: host
+
+  controller:
+    image: lulav/spring_mass_example:v1.0
+    network_mode: "host"
+    entrypoint: /bin/bash -c ". /tmp/fprime-venv/bin/activate && cd /workspaces/ros2_fprime_bridge/fprime_ws/spring && fprime-gds -n"
+    stdin_open: true
+    tty: true
+    ipc: host
