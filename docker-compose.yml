@@ -3,16 +3,14 @@ version: '3.8'
 services:
   dynamics:
     image: lulav/spring_mass_example:v1.0
-    network_mode: "host"
-    command: bash -c "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch scheduler simulator.launch.py"
-    stdin_open: true
-    tty: true
-    ipc: host
+    command: bash -c "sleep 5 && source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch scheduler simulator.launch.py"
 
   controller:
     image: lulav/spring_mass_example:v1.0
-    network_mode: "host"
     entrypoint: /bin/bash -c ". /tmp/fprime-venv/bin/activate && cd /workspaces/ros2_fprime_bridge/fprime_ws/spring && fprime-gds -n"
-    stdin_open: true
-    tty: true
-    ipc: host
+
+  rosbridge:
+      image: lulav/spring_mass_example:v1.0
+      command: bash -c "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml"
+      ports:
+      - "9090:9090"

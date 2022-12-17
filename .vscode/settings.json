@@ -67,5 +67,6 @@
         "cinttypes": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "${workspaceFolder}/ros_ws/build/dynamics_node/dynamics_node__py"
 }

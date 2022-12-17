@@ -76,4 +76,7 @@ RUN  . /opt/ros/foxy/setup.sh && \
 RUN echo "source /opt/ros/foxy/setup.bash" >> /home/$USERNAME/.bashrc
 RUN echo "source /tmp/fprime-venv/bin/activate" >> /home/$USERNAME/.bashrc 
 
+# download rosbridge for Foxglove monitoring
+RUN apt update && apt-get install -y ros-foxy-rosbridge-suite
+
 CMD ["bash"]
