@@ -81,6 +81,10 @@ RUN apt-get update
 RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
 RUN rm google-chrome-stable_current_amd64.deb
 
+# download rosbridge for Foxglove monitoring
+RUN apt update && apt-get install -y ros-foxy-rosbridge-suite
+
 RUN echo "source /opt/ros/foxy/setup.bash" >> /home/$USERNAME/.bashrc
 RUN echo "source /tmp/fprime-venv/bin/activate" >> /home/$USERNAME/.bashrc 
 RUN chown -R $USERNAME:$USERNAME /app/fprime
+RUN chown -R $USERNAME:$USERNAME /tmp/fprime-venv
