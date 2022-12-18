@@ -9,7 +9,6 @@ services:
     tty: true
     ipc: host
 
-
   controller:
     image: lulav/spring_mass_example:v1.0
     network_mode: "host"
@@ -19,8 +18,8 @@ services:
     ipc: host
     
   rosbridge:
-      image: lulav/spring_mass_example:v1.0
-      tty: true
-      command: bash -c "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml"
-      ports:
-      - "9090:9090"
+    image: lulav/spring_mass_example:v1.0
+    tty: true
+    command: bash -c "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml"
+    ports:
+    - "9090:9090"
