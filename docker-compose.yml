@@ -12,12 +12,12 @@ services:
   controller:
     image: lulav/spring_mass_example:v1.0
     network_mode: "host"
-    entrypoint: /bin/bash -c ". /tmp/fprime-venv/bin/activate && ./fprime_ws/spring/build-artifacts/Linux/bin/spring -a 0.0.0.0 -p 50000 >> /tmp/fprime.log"
+    entrypoint: /bin/bash -c ". /tmp/fprime-venv/bin/activate && cd fprime_ws/spring && fprime-gds >> /tmp/fprime.log"
     stdin_open: true
     tty: true
     ipc: host
     
-  rosbridge:
+  foxglove_bridge:
     image: lulav/spring_mass_example:v1.0
     tty: true
     command: bash -c "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml"
