@@ -3,6 +3,7 @@ simulink/*.slxc
 build/
 install/
 log/
+*.deb
 
 
 common/autogen/schemas/

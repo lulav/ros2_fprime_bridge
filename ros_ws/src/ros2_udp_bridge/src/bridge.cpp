@@ -22,10 +22,10 @@ Bridge::~Bridge()
 
 void Bridge::reading_work()
 {
-    printf("ros2_bridge: opening UDP sockets... ");
+    RCLCPP_INFO(get_logger(), "ros2_bridge: opening UDP sockets... ");
     _udp_client = std::make_shared<client>("0.0.0.0", CLIENT_PORT);
     _udp_server = std::make_shared<server>("0.0.0.0", SERVER_PORT);
-    printf("Done. listening on port %d\n", SERVER_PORT);
+    RCLCPP_INFO(get_logger(), "Done. listening on port %d", SERVER_PORT);
     
     while(_keep_reading)
     {
