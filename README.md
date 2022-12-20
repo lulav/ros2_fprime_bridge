@@ -33,22 +33,37 @@ Further details about the internal implementation of the spring project (which m
 
 ![design](png/design.png "high level design")
 
-## Prerequisites 
+### Prerequisites 
 since everything is run inside a Docker container, the only two prerequisites are:
 - [Visual Studio Code](https://code.visualstudio.com/download)
 - [Docker](https://www.docker.com/)
 
-## Build the spring example
-### clone the repository to your local machine:
+### Clone the repository to your local machine:
                 
     git clone https://github.com/lulav/ros2_fprime_bridge.git
 
-### open the repository in VScode:
+### Open the repository in VScode:
 
     cd ~/ros2_fprime_bridge
     code .
 
-Before you begin, make sure that within Visual Studio Code, you've opened the working directory inside a [Dev Container](https://code.visualstudio.com/docs/devcontainers/containers) by choosing the `reopen in container` option.
+## Run the spring example in a docker image
+This repository provides both a [dockerfile](Dockerfile) that runs a stand-alone docker image (downloaded from [Docker-Hub](https://hub.docker.com/)) on your host machine, and a Dev-Container [dockerfile](.devcontainer/Dockerfile) for in-docker development (next section).
+
+To run the docker image, first make sure that within Visual Studio Code, you've opened the working directory **locally** (not inside a Dev-Container). Then, simply run:
+
+    docker-compose up
+
+At this point, you can open `127.0.0.1:5000` in your favorite browser and see the GDS GUI running. If you open the charts tab and choose `the_controller.u` from the dropdown menu, you should see something similar to the following telemetry:
+
+![GDS screenshot](png/screenshot_gds.png "spring mass dumper")
+
+In addition, if you open a ROS2 viewer, e.g. [Foxglove](https://foxglove.dev/download), you should also see a similar visualization:
+
+![Foxglove screenshot](png/screenshot_foxglove.png "spring mass dumper")
+ 
+## Build the spring example in a Dev-Container
+Before you begin, make sure that within Visual Studio Code, you've opened the working directory inside a [Dev-Container](https://code.visualstudio.com/docs/devcontainers/containers) by choosing the `Reopen in Container` option.
 
 ### generate schema files and ProtoBuf code:
 
@@ -80,13 +95,9 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
         cd ros_ws
         ros2 launch scheduler simulator.launch.py
 
-At this point, if you open the charts tab in the GDS GUI and choose `the_controller.u` from the dropdown menu, you should see something similar to the following telemetry:
+At this point, if you open the charts tab in the GDS GUI and choose `the_controller.u` from the dropdown menu, you should see telemetry as in the previous section.
 
-![GDS screenshot](png/screenshot_gds.png "spring mass dumper")
-
-In addition, if you open a ROS2 viewer, e.g. [Foxglove](https://foxglove.dev/download), you should also see a similar visualization:
-
-![Foxglove screenshot](png/screenshot_foxglove.png "spring mass dumper")
+In addition, if you open a ROS2 viewer, e.g. [Foxglove](https://foxglove.dev/download), you should also see a  visualization as in the previous section.
 
 ## Feedback
 Please send your questions, bug reports and suggestions to `shalev@lulav.space`.
