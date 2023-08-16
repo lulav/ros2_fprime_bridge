@@ -18,7 +18,7 @@ module spring {
     # ----------------------------------------------------------------------
 
     # @ Command receive
-    # command recv port cmdIn
+    command recv port cmdIn
 
     @ Command registration
     command reg port cmdRegOut
@@ -30,10 +30,10 @@ module spring {
     event port eventOut
 
     # @ Parameter get
-    # param get port prmGetOut
+    #param get port prmGetOut
 
     # @ Parameter set
-    # param set port prmSetOut
+    #param set port prmSetOut
 
     @ Telemetry
     telemetry port tlmOut

@@ -32,7 +32,8 @@ RUN apt-get update && apt-get install -y \
   python3 \
   python3-setuptools \
   python3-pip \
-  python3-venv
+  python3-venv && \
+  rm -rf /var/lib/apt/lists/*
 
 # install protobuf libs:
 RUN mkdir protobuf && cd protobuf && \
@@ -44,14 +45,6 @@ RUN cd protobuf/protobuf-3.21.7 && \
     cmake -Dprotobuf_BUILD_TESTS=OFF . &&\
     make && \
     make install
-
-# install fprime depenedencies:
-RUN rm -rf /var/lib/apt/lists/* \
-    && python3 -m venv /tmp/fprime-venv \
-    && . /tmp/fprime-venv/bin/activate \
-    && python3 -m pip install -U --upgrade pip setuptools setuptools_scm wheel argcomplete \
-    && printf '\n[ -d "%s" ] && . %s/bin/activate\n' /tmp/fprime-venv /tmp/fprime-venv >> ~/.bashrc \
-    && echo 'eval "$(register-python-argcomplete fprime-cli)"' >> ~/.bashrc
 
 ARG USERNAME=dev
 ARG USER_UID=1000
@@ -72,9 +65,15 @@ RUN groupadd --gid $USER_GID $USERNAME \
 # define workspace
 WORKDIR /app
 
+# install fprime depenedencies:
+RUN python3 -m pip install -U --upgrade pip setuptools setuptools_scm wheel argcomplete \
+    && printf '\n[ -d "%s" ] && . %s/bin/activate\n' /tmp/fprime-venv /tmp/fprime-venv >> ~/.bashrc \
+    && echo 'eval "$(register-python-argcomplete fprime-cli)"' >> ~/.bashrc
+
 # installing fprime requirements
+RUN python3 -m pip install --ignore-installed PyYAML
 RUN mkdir fprime && git clone https://github.com/nasa/fprime.git fprime
-RUN . /tmp/fprime-venv/bin/activate && python3 -m pip install -U -r fprime/requirements.txt
+RUN python3 -m pip install -U -r fprime/requirements.txt
 
 RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 RUN apt-get update
@@ -85,6 +84,4 @@ RUN rm google-chrome-stable_current_amd64.deb
 RUN apt update && apt-get install -y ros-foxy-rosbridge-suite
 
 RUN echo "source /opt/ros/foxy/setup.bash" >> /home/$USERNAME/.bashrc
-RUN echo "source /tmp/fprime-venv/bin/activate" >> /home/$USERNAME/.bashrc 
 RUN chown -R $USERNAME:$USERNAME /app/fprime
-RUN chown -R $USERNAME:$USERNAME /tmp/fprime-venv

@@ -142,9 +142,9 @@ module spring {
     priority 96 \
   {
 
-    phase Fpp.ToCpp.Phases.instances """
-    Svc::PrmDb prmDb(FW_OPTIONAL_NAME("prmDb"), "PrmDb.dat");
-    """
+    #phase Fpp.ToCpp.Phases.instances """
+    #Svc::PrmDb prmDb(FW_OPTIONAL_NAME("prmDb"), "PrmDb.dat");
+    #"""
 
     phase Fpp.ToCpp.Phases.readParameters """
     prmDb.readParamFile();

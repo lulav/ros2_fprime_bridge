@@ -1,6 +1,7 @@
 from launch import LaunchDescription
 import sys
 from launch_ros.actions import Node
+from launch.actions import ExecuteProcess
 from ament_index_python.packages import get_package_share_directory
 import launch
 import os
@@ -30,5 +31,12 @@ def generate_launch_description():
             executable='scheduler',
             name='scheduler',
             output='screen'
-        )
+        ),
+    # ExecuteProcess(
+    #         cmd=[['./air_firmware_sitl_testing/build/ADOMFCV1_LULAV/ADOMFCV1_LULAV.elf']],
+    #         shell=True,
+    #         name='firmware',
+    #         output='screen',
+    #         emulate_tty=True
+    #     )
     ])
