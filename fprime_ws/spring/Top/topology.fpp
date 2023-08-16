@@ -36,7 +36,7 @@ module spring {
     instance fileUplink
     instance fileUplinkBufferManager
     instance linuxTime
-    instance prmDb
+    #instance prmDb
     instance rateGroup1Comp
     instance rateGroupDriverComp
     instance staticMemory
@@ -55,7 +55,7 @@ module spring {
 
     event connections instance eventLogger
 
-    param connections instance prmDb
+#    param connections instance prmDb
 
     telemetry connections instance chanTlm
 

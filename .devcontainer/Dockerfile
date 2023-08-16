@@ -66,7 +66,7 @@ RUN groupadd --gid $USER_GID $USERNAME \
 WORKDIR /app
 
 # install fprime depenedencies:
-RUN python3 -m pip install -U --upgrade pip setuptools setuptools_scm wheel argcomplete \
+RUN python3 -m pip install -U --upgrade pip setuptools==58.2.0 setuptools_scm wheel argcomplete \
     && printf '\n[ -d "%s" ] && . %s/bin/activate\n' /tmp/fprime-venv /tmp/fprime-venv >> ~/.bashrc \
     && echo 'eval "$(register-python-argcomplete fprime-cli)"' >> ~/.bashrc
 

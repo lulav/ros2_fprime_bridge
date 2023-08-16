@@ -32,11 +32,11 @@ def generate_launch_description():
             name='scheduler',
             output='screen'
         ),
-    # ExecuteProcess(
-    #         cmd=[['./air_firmware_sitl_testing/build/ADOMFCV1_LULAV/ADOMFCV1_LULAV.elf']],
-    #         shell=True,
-    #         name='firmware',
-    #         output='screen',
-    #         emulate_tty=True
-    #     )
+    ExecuteProcess(
+            cmd=[['./workspaces/ros2_fprime_bridge/fprime_ws/spring/build-artifacts/Linux/spring/bin/spring']],
+            shell=True,
+            name='fprime',
+            output='screen',
+            emulate_tty=True
+        )
     ])

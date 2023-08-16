@@ -17,7 +17,7 @@ module spring {
     # Special ports
     # ----------------------------------------------------------------------
 
-    # @ Command receive
+    @ Command receive
     command recv port cmdIn
 
     @ Command registration
@@ -28,12 +28,6 @@ module spring {
 
     @ Event
     event port eventOut
-
-    # @ Parameter get
-    #param get port prmGetOut
-
-    # @ Parameter set
-    #param set port prmSetOut
 
     @ Telemetry
     telemetry port tlmOut
