@@ -33,7 +33,7 @@ def generate_launch_description():
             output='screen'
         ),
     ExecuteProcess(
-            cmd=[['./workspaces/ros2_fprime_bridge/fprime_ws/spring/build-artifacts/Linux/spring/bin/spring']],
+            cmd=[['./fprime_ws/spring/build-artifacts/Linux/spring/bin/spring']],
             shell=True,
             name='fprime',
             output='screen',
