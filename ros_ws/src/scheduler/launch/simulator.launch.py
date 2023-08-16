@@ -32,7 +32,7 @@ def generate_launch_description():
             name='scheduler',
             output='screen'
         ),
-    ExecuteProcess(
+        ExecuteProcess(
             cmd=[['./fprime_ws/spring/build-artifacts/Linux/spring/bin/spring']],
             shell=True,
             name='fprime',
