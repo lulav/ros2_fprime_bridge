@@ -36,7 +36,7 @@ def generate_launch_description():
             cmd=[['./fprime_ws/spring/build-artifacts/Linux/spring/bin/spring']],
             shell=True,
             name='fprime',
-            output='screen',
-            emulate_tty=True
+            # output='screen', # avoid error message from fprime ([ERROR] Failed to send framed data: 2)
+            # emulate_tty=True
         )
     ])
