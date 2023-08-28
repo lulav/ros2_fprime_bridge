@@ -97,6 +97,8 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
     fprime-utils generate
     fprime-utils build
 
+# Run the example
+
 ## Run the spring example(From terminal):
 
         ros2 launch scheduler simulator.launch.py
@@ -111,11 +113,12 @@ We set useful [VSCode Tasks](.vscode/tasks.json) for this project:
 
 The sprint example can be launch from `launch-simulation` task.
 
+## Monitoring
+
 At this point, if you open the charts tab in the GDS GUI and choose `the_controller.u` from the dropdown menu, you should see telemetry as in the previous section.
 
 In addition, if you open [Foxglove](https://foxglove.dev/download) (see details in the previous section), you should also see a  visualization as in the previous section.
 
-## Contributions
-Please send your questions, bug reports and suggestions to `shalev@lulav.space`.
+## Feedback
 
-Your flattery and hard earned cash are also welcome ;) 
+For any bug report or feature suggestion please open an issue on the project's GitHub page.
