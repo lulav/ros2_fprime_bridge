@@ -1,6 +1,6 @@
 {
-    "version": "2.0.0",
-    "tasks": [
+	"version": "2.0.0",
+	"tasks": [
         {
             "label": "ros2-build",
             "type": "shell",
@@ -49,5 +49,5 @@
                 "close": true
             }
         }
-    ]
+	]
 }
