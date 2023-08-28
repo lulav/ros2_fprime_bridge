@@ -94,6 +94,12 @@ void DynamicsNode::cb_get_enable_signal(const std_msgs::msg::Bool::SharedPtr msg
     _dynamics.get_outputs(dynamics_output);
 
     publish_to_ros(dynamics_output);
+
+    RCLCPP_INFO(get_logger(), 
+                "Signals: r = %.4f, v = %.4f, u = %.4f",
+                dynamics_output.r, 
+                dynamics_output.v,
+                _u);
     
     RCL_UNUSED(msg);
 }
