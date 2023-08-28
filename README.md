@@ -75,7 +75,9 @@ In order to view the simulation signals in Foxglove's Studio:
 ## Build the spring example in a Dev-Container
 Before you begin, make sure that within Visual Studio Code, you've opened the working directory inside a [Dev-Container](https://code.visualstudio.com/docs/devcontainers/containers) by choosing the `Reopen in Container` option.
 
-### generate schema files and ProtoBuf code:
+**The [build.sh](.devcontainer/build.sh) script should build automatically the following after the `devcontainer` image is built:**
+
+### 1. schema files and ProtoBuf code:
 
     cd common/autogen
     chmod +x compile.py
@@ -83,33 +85,37 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
     protoc -I=schemas/spring/proto3 --cpp_out=./schemas/spring/proto3 spring.proto
 **Note**: the protoc compiler actually runs automatically as part of the build process in the spring example (both on the FPrime and ROS2 builds). See the `CMakeLists.txt` files of the bridge component/node.
 
-### build the ROS2 project:
+### 2. ROS2 project:
 
     cd ros_ws
     source install/local_setup.bash
     colcon build
-### build the FPrime project:
+
+### 3. FPrime project:
 
     cd fprime_ws/spring
     fprime-utils generate
     fprime-utils build
 
-## Run the spring example
-1. Run the Fprime GDS:
+## Run the spring example(From terminal):
 
-        cd fprime_ws/spring
-        fprime-gds
-    a browser with the GDS GUI should come up at this point (may take a few seconds). If it doesn't, just open it manually (on `127.0.0.1:5000`).
-2. Run the ROS2 project:
-
-        cd ros_ws
         ros2 launch scheduler simulator.launch.py
+
+## Run the spring example(From VSCode Tasks):
+
+We set useful [VSCode Tasks](.vscode/tasks.json) for this project:
+
+1. Run default simulation.
+2. Build ROS workspace.
+3. Build Fprime project.
+
+The sprint example can be launch from `launch-simulation` task.
 
 At this point, if you open the charts tab in the GDS GUI and choose `the_controller.u` from the dropdown menu, you should see telemetry as in the previous section.
 
 In addition, if you open [Foxglove](https://foxglove.dev/download) (see details in the previous section), you should also see a  visualization as in the previous section.
 
-## Feedback
+## Contributions
 Please send your questions, bug reports and suggestions to `shalev@lulav.space`.
 
 Your flattery and hard earned cash are also welcome ;) 
