@@ -4,7 +4,7 @@ services:
   dynamics:
     image: lulav/spring_mass_example:v1.0
     network_mode: "host" 
-    command: bash -c "sleep 5 && source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch scheduler simulator.launch.py"
+    command: bash -c "sleep 5 && source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch scheduler dynamics.launch.py"
     stdin_open: true
     tty: true
     ipc: host
