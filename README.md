@@ -60,7 +60,7 @@ then Open the repository in VScode:
     code .
 
 ## Run with `docker-compose`
-This repository provides both a [dockerfile](Dockerfile) that runs a stand-alone docker image (downloaded from [Docker-Hub](https://hub.docker.com/)) on your host machine, and a Dev-Container [dockerfile](.devcontainer/Dockerfile) for in-docker development (next section).
+This repository provides both a [dockerfile](Dockerfile) that runs a stand-alone docker image on your host machine, and a Dev-Container [dockerfile](.devcontainer/Dockerfile) for in-docker development (next section).
 
 To run the docker image, first make sure that within Visual Studio Code, you've opened the working directory **locally** (not inside a Dev-Container). Then, simply run:
 

@@ -2,23 +2,33 @@ version: '3.8'
 
 services:
   dynamics:
-    image: lulav/spring_mass_example:v1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     network_mode: "host" 
     command: bash -c "sleep 5 && source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch scheduler dynamics.launch.py"
     stdin_open: true
     tty: true
     ipc: host
+    depends_on:
+      - controller
 
   controller:
-    image: lulav/spring_mass_example:v1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     network_mode: "host"
     entrypoint: /bin/bash -c ". /tmp/fprime-venv/bin/activate && cd fprime_ws/spring && fprime-gds >> /tmp/fprime.log"
     stdin_open: true
     tty: true
     ipc: host
+    depends_on:
+      - foxglove_adapter
     
   foxglove_adapter:
-    image: lulav/spring_mass_example:v1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
     tty: true
     command: bash -c "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash && ros2 launch rosbridge_server rosbridge_websocket_launch.xml"
     ports:
