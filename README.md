@@ -8,8 +8,6 @@ A[F`] <--> |ProtoBuf| B[ROS2]
 ```
 
 # Table of Contents
-- [ROS2-FPrime Bridge - by Lulav Space ](#ros2-fprime-bridge---by-lulav-space-)
-- [Table of Contents](#table-of-contents)
 - [How it works](#how-it-works)
 - [The spring example](#the-spring-example)
   - [Prerequisites](#prerequisites)
