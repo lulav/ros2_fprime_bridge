@@ -94,25 +94,28 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
 **The [build.sh](.devcontainer/build.sh) script should build automatically the following after the `devcontainer` image is built:**
 
 1. schema files and ProtoBuf code:
-
-    cd common/autogen
-    chmod +x compile.py
-    ./compile.py spring_defs.json
-    protoc -I=schemas/spring/proto3 --cpp_out=./schemas/spring/proto3 spring.proto
+```bash
+        cd common/autogen
+        chmod +x compile.py
+        ./compile.py spring_defs.json
+        protoc -I=schemas/spring/proto3 --cpp_out=./schemas/spring/proto3 spring.proto
+```
 
 **Note**: the protoc compiler actually runs automatically as part of the build process in the spring example (both on the FPrime and ROS2 builds). See the `CMakeLists.txt` files of the bridge component/node.
 
 2. ROS2 project:
-
-    cd ros_ws
-    source install/local_setup.bash
-    colcon build
+```bash
+        cd ros_ws
+        source install/local_setup.bash
+        colcon build
+```
 
 3. FPrime project:
-
-    cd fprime_ws/spring
-    fprime-utils generate
-    fprime-utils build
+```bash
+        cd fprime_ws/spring
+        fprime-utils generate
+        fprime-utils build
+```
 
 ### Run (terminal):
 
