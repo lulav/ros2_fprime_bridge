@@ -1,6 +1,6 @@
-FROM ros:hubmle
+FROM ros:humble
 
-ENV ROS_DISTRO hubmle
+ENV ROS_DISTRO humble
 
 # install utils
 ENV DEBIAN_FRONTEND=noninteractive
@@ -31,8 +31,8 @@ RUN apt-get update && apt-get install -y \
   python3 \
   python3-setuptools \
   python3-pip \
-  python3-venv && \
-  ros-${ROS_DISTRO}-rosbridge-suite \
+  python3-venv  \
+  ros-${ROS_DISTRO}-rosbridge-suite  && \
   rm -rf /var/lib/apt/lists/*
 
 # install protobuf libs:
@@ -76,5 +76,5 @@ RUN mkdir fprime && git clone https://github.com/nasa/fprime.git fprime && \
     git reset --hard a56426adbb888ce4f5a8c6a2be3071a25b11da16
 RUN python3 -m pip install -U -r fprime/requirements.txt
 
-RUN echo "source /opt/ros/${ROS_DISTRO}}/setup.bash" >> /home/$USERNAME/.bashrc
+RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/$USERNAME/.bashrc
 RUN chown -R $USERNAME:$USERNAME /app/fprime
