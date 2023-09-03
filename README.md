@@ -1,10 +1,10 @@
-# ROS2-FPrime Bridge - by Lulav Space <img src="png/white.png" alt="drawing" width="35" align="right"/>
+# ROS 2 - FPrime Bridge - by Lulav Space <img src="png/white.png" alt="drawing" width="35" align="right"/>
 
-This repository provides a simple and convenient way to bridge the gap between FPrime and ROS2 when such integration is required, by using [ProtoBuf]((https://developers.google.com/protocol-buffers)) messages as an intermediary between the two frameworks. This solution enables a complete decoupling between the two frameworks, and actually can be used to integrate FPrime or ROS2 with any other framework.
+This repository provides a simple and convenient way to bridge the gap between FPrime and ROS 2 when such integration is required, by using [ProtoBuf]((https://developers.google.com/protocol-buffers)) messages as an intermediary between the two frameworks. This solution enables a complete decoupling between the two frameworks, and actually can be used to integrate FPrime or ROS 2 with any other framework.
 
 ```mermaid
 flowchart LR
-A[F`] <--> |ProtoBuf| B[ROS2]
+A[F`] <--> |ProtoBuf| B[ROS 2]
 ```
 
 # Table of Contents
@@ -35,7 +35,7 @@ The user needs to define an FPrime component and a ROS node that will act as the
 ProtoBuf serialization + deserialization takes (much) less than 100 microseconds (even for large messages with dozens of fields). On each end of the bridge, message fields are “translated” seriatim between Protobuf and ROS/FPrime. The python script also provides automatic code generation for the translator functions (currently FPrime-ProtoBuf only).  
 
 # The spring example
-The repository also provides an example project called `spring_mass_dumper`, which, as the name suggests, is a simple example of a spring mass dumper, in which the spring controller implementation resides inside an FPrime component, and the simulation that drives it resides inside a ROS2 node. This example may be used as a boilerplate for your project, since the basic functionality will likely stay the same, the only changes being the specific messages between ROS2 and FPrime.
+The repository also provides an example project called `spring_mass_dumper`, which, as the name suggests, is a simple example of a spring mass dumper, in which the spring controller implementation resides inside an FPrime component, and the simulation that drives it resides inside a ROS 2 node. This example may be used as a boilerplate for your project, since the basic functionality will likely stay the same, the only changes being the specific messages between ROS 2 and FPrime.
 
 The project provides a header file named [io_structs.hpp](examples/spring_mass_dumper/include/io_structs.hpp) in which the messages between the simulation and controller are defined, and which is used as the input for the python script.
 
@@ -72,7 +72,7 @@ At this point, you can open `127.0.0.1:5000` in your favorite browser and see th
 
 ![GDS screenshot](png/screenshot_gds.png "spring mass dumper")
 
-In addition, if you open a ROS2 viewer, e.g. [Foxglove](https://foxglove.dev/download), you should also see a similar visualization:
+In addition, if you open a ROS 2 viewer, e.g. [Foxglove](https://foxglove.dev/download), you should also see a similar visualization:
 
 ![Foxglove screenshot](png/screenshot_foxglove.png "spring mass dumper")
 
@@ -99,9 +99,9 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
         protoc -I=schemas/spring/proto3 --cpp_out=./schemas/spring/proto3 spring.proto
 ```
 
-**Note**: the protoc compiler actually runs automatically as part of the build process in the spring example (both on the FPrime and ROS2 builds). See the `CMakeLists.txt` files of the bridge component/node.
+**Note**: the protoc compiler actually runs automatically as part of the build process in the spring example (both on the FPrime and ROS 2 builds). See the `CMakeLists.txt` files of the bridge component/node.
 
-2. ROS2 project:
+2. ROS 2 project:
 ```bash
         cd ros_ws
         source install/local_setup.bash
