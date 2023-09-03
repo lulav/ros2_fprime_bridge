@@ -21,3 +21,4 @@ rm -rf ros_ws/build/ ros_ws/log/ ros_ws/install/
 . /opt/ros/foxy/setup.sh
 cd ros_ws
 colcon build
+echo "source /workspaces/ros2_fprime_bridge/ros_ws/install/local_setup.bash" >> ~/.bashrc

@@ -1,6 +1,6 @@
-FROM ros:foxy
+FROM ros:hubmle
 
-ENV ROS_DISTRO foxy
+ENV ROS_DISTRO hubmle
 
 # install utils
 ENV DEBIAN_FRONTEND=noninteractive
@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y \
   cmake \
   gdb \
   git \
-  pylint3 \
   python3-argcomplete \
   python3-pip \
   nano \
@@ -33,6 +32,7 @@ RUN apt-get update && apt-get install -y \
   python3-setuptools \
   python3-pip \
   python3-venv && \
+  ros-${ROS_DISTRO}-rosbridge-suite \
   rm -rf /var/lib/apt/lists/*
 
 # install protobuf libs:
@@ -67,21 +67,14 @@ WORKDIR /app
 
 # install fprime depenedencies:
 RUN python3 -m pip install -U --upgrade pip setuptools==58.2.0 setuptools_scm wheel argcomplete \
-    && printf '\n[ -d "%s" ] && . %s/bin/activate\n' /tmp/fprime-venv /tmp/fprime-venv >> ~/.bashrc \
     && echo 'eval "$(register-python-argcomplete fprime-cli)"' >> ~/.bashrc
 
 # installing fprime requirements
 RUN python3 -m pip install --ignore-installed PyYAML
-RUN mkdir fprime && git clone https://github.com/nasa/fprime.git fprime
+RUN mkdir fprime && git clone https://github.com/nasa/fprime.git fprime && \
+    cd fprime && \
+    git reset --hard a56426adbb888ce4f5a8c6a2be3071a25b11da16
 RUN python3 -m pip install -U -r fprime/requirements.txt
 
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN apt-get update
-RUN apt-get install -y ./google-chrome-stable_current_amd64.deb
-RUN rm google-chrome-stable_current_amd64.deb
-
-# download rosbridge for Foxglove monitoring
-RUN apt update && apt-get install -y ros-foxy-rosbridge-suite
-
-RUN echo "source /opt/ros/foxy/setup.bash" >> /home/$USERNAME/.bashrc
+RUN echo "source /opt/ros/${ROS_DISTRO}}/setup.bash" >> /home/$USERNAME/.bashrc
 RUN chown -R $USERNAME:$USERNAME /app/fprime
