@@ -66,6 +66,10 @@ To run the docker image, first make sure that within Visual Studio Code, you've 
 
     docker-compose up
 
+**Note:** if you don't have docker-compose installed, install it with:
+
+    sudo apt install docker-compose
+
 ### Monitoring
 
 At this point, you can open `127.0.0.1:5000` in your favorite browser and see the GDS GUI running. If you open the charts tab and choose `the_controller.u` from the dropdown menu, you should see something similar to the following telemetry:
@@ -89,7 +93,7 @@ In order to view the simulation signals in Foxglove's Studio:
 ## Develop with `devcontainer`
 Before you begin, make sure that within Visual Studio Code, you've opened the working directory inside a [Dev-Container](https://code.visualstudio.com/docs/devcontainers/containers) by choosing the `Reopen in Container` option.
 
-**The [build.sh](.devcontainer/build.sh) script should build automatically the following after the `devcontainer` image is built:**
+**After the project is built and opens in a dev-container, the [build.sh](.devcontainer/build.sh) script will run automatically and perform the following actions:**
 
 1. schema files and ProtoBuf code:
 ```bash
@@ -104,9 +108,10 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
 2. ROS 2 project:
 ```bash
         cd ros_ws
-        source install/local_setup.bash
         colcon build
+        source install/local_setup.bash
 ```
+**Note:** sourcing of the underlay is `echo`ed into `.bashrc` in the devcontainer dockerfile. 
 
 3. FPrime project:
 ```bash
@@ -121,16 +126,18 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
 
 ### Run (VSCode Tasks):
 
-We set useful [VSCode Tasks](.vscode/tasks.json) for this project:
+We created the following three [VSCode Tasks](.vscode/tasks.json) for this project:
 
-1. Run default simulation.
-2. Build ROS workspace.
-3. Build Fprime project.
+1. `launch-simulation` - build and run the spring simulation.
+2. `fprime-init` - generate and build the fprime project.
+3. `fprime-build` - build the fprime project.
+4. `ros2-build` - colcon builds the ROS 2 project.
+5. `build-fprime-ros` - build both the fprime and ROS 2 projects.
 
-The spring example can be launch from `launch-simulation` task.
+They can be run by typing `ctrl+p`. In the drop-down menue type `task ` (space after task) and you should see them appear. **Note:** the only task you need to build and run is `launch-simulation`, the others are convinience tasks for development.
 
 #### Monitoring
 
-At this point, if you open the charts tab in the GDS GUI and choose `the_controller.u` from the dropdown menu, you should see telemetry as in the previous section.
+At this point, if you open the charts tab in the GDS GUI and choose `the_controller.u` from the drop-down menu, you should see telemetry as in the previous section.
 
 In addition, if you open [Foxglove](https://foxglove.dev/download) (see details in the previous section), you should also see a  visualization as in the previous section.
