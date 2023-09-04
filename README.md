@@ -126,7 +126,7 @@ Before you begin, make sure that within Visual Studio Code, you've opened the wo
 
 ### Run (VSCode Tasks):
 
-We created the following three [VSCode Tasks](.vscode/tasks.json) for this project:
+We created the following five [VSCode Tasks](.vscode/tasks.json) for this project:
 
 1. `launch-simulation` - build and run the spring simulation.
 2. `fprime-init` - generate and build the fprime project.
@@ -134,7 +134,7 @@ We created the following three [VSCode Tasks](.vscode/tasks.json) for this proje
 4. `ros2-build` - colcon builds the ROS 2 project.
 5. `build-fprime-ros` - build both the fprime and ROS 2 projects.
 
-They can be run by typing `ctrl+p`. In the drop-down menue type `task ` (space after task) and you should see them appear. **Note:** the only task you need to build and run is `launch-simulation`, the others are convinience tasks for development.
+They can be run by typing `ctrl+p`. In the drop-down menu type `task ` (space after task) and you should see them appear. **Note:** the only task you need to build and run is `launch-simulation`, the others are convenience tasks for development.
 
 #### Monitoring
 
