@@ -6,32 +6,41 @@
 			"WORKSPACE": "${containerWorkspaceFolder}"
 		}
 	},
+	"postCreateCommand": "bash ./.devcontainer/build.sh",
 	"remoteUser": "dev",
 	"runArgs": [
 		"--network=host",
 		"--cap-add=SYS_PTRACE",
 		"--security-opt=seccomp:unconfined",
 		"--security-opt=apparmor:unconfined",
-		"--volume=/tmp/.X11-unix:/tmp/.X11-unix"
+		"--volume=/tmp/.X11-unix:/tmp/.X11-unix",
+		"--device=/dev/dri:/dev/dri"
 	],
 	"containerEnv": { "DISPLAY": "${localEnv:DISPLAY}" },
 	// Set *default* container specific settings.json values on container create.
-	"settings": {
-		"terminal.integrated.profiles.linux": {
-			"bash": {
-				"path": "bash"
-			},
-		},
-		"terminal.integrated.defaultProfile.linux": "bash"
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"althack.ament-task-provider",
+				"DotJoshJohnson.xml",
+				"ms-azuretools.vscode-docker",
+				"ms-python.python",
+				"ms-vscode.cpptools",
+				"redhat.vscode-yaml",
+				"smilerobotics.urdf",
+				"streetsidesoftware.code-spell-checker",
+				"twxs.cmake",
+				"yzhang.markdown-all-in-one",
+				"zachflower.uncrustify",
+				"betwo.b2-catkin-tools"
+			]
+		}
 	},
-	"extensions": [
-		"dotjoshjohnson.xml",
-		"zachflower.uncrustify",
-		"ms-azuretools.vscode-docker",
-		"ms-python.python",
-		"ms-vscode.cpptools",
-		"redhat.vscode-yaml",
-		"streetsidesoftware.code-spell-checker",
-		"twxs.cmake"
-	]
+	"features": {
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"version": "latest",
+			"moby": true
+		}
+
+	}
 }

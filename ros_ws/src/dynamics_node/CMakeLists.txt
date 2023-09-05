@@ -16,6 +16,7 @@ if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 endif()
 
 # find dependencies
+find_package(std_msgs REQUIRED)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
@@ -48,7 +49,7 @@ set(EXAMPLE_FILES ${EXAMPLE_DIR}/dynamics.cpp)
 add_library(example STATIC ${EXAMPLE_FILES})
 
 add_executable(dynamics src/dynamics_node.cpp)
-ament_target_dependencies(dynamics rclcpp)
+ament_target_dependencies(dynamics rclcpp std_msgs)
 
 rosidl_target_interfaces(dynamics ${PROJECT_NAME} "rosidl_typesupport_cpp")
 

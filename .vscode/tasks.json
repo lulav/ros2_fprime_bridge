@@ -1,0 +1,53 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+        {
+            "label": "ros2-build",
+            "type": "shell",
+            "command": "cd ros_ws && colcon build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            }
+        },
+        {
+            "label": "launch-simulation",
+            "type": "shell",
+            "command": "source ros_ws/install/local_setup.bash && ros2 launch scheduler simulator.launch.py",
+            "problemMatcher": [],
+            "dependsOn": ["build"]
+        },
+
+        {
+            "label": "fprime-init",
+            "type": "shell",
+            "command": "cd fprime_ws/spring && fprime-util generate && fprime-util build",
+            "problemMatcher": []
+        },
+        {
+            "label": "fprime-build",
+            "type": "shell",
+            "command": "cd fprime_ws/spring && fprime-util build",
+            "problemMatcher": [],
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            }
+        },
+        {
+            "label": "build-fprime-ros",
+            "type": "shell",
+            "command": "echo -e 'Done building, simulation is ready!'",
+            "problemMatcher": [],
+            "dependsOn": ["fprime-build", "ros2-build"],
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            }
+        }
+	]
+}

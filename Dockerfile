@@ -1,6 +1,6 @@
-FROM ros:foxy
+FROM ros:humble
 
-ENV ROS_DISTRO foxy
+ENV ROS_DISTRO humble
 
 # install utils
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive  && apt-get install -y  --no-install-recommends\
@@ -25,6 +25,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive  && apt-get install -y  --n
     python3-setuptools \
     python3-pip \
     python3-venv \
+    ros-${ROS_DISTRO}-rosbridge-suite \
     && rm -rf /var/lib/apt/lists/*
 
 # install protobuf libs:
@@ -42,7 +43,7 @@ RUN cd protobuf/protobuf-3.21.7 && \
 RUN apt-get update && \
     python3 -m venv /tmp/fprime-venv &&\
     . /tmp/fprime-venv/bin/activate &&\
-    python3 -m pip install -U --upgrade pip setuptools setuptools_scm wheel argcomplete &&\
+    python3 -m pip install -U --upgrade pip setuptools==58.2.0 setuptools_scm wheel argcomplete &&\
     printf '\n[ -d "%s" ] && . %s/bin/activate\n' /tmp/fprime-venv /tmp/fprime-venv >> ~/.bashrc &&\
     echo 'eval "$(register-python-argcomplete fprime-cli)"' >> ~/.bashrc
 
@@ -54,7 +55,9 @@ COPY common/ common/
 
 #compiling fprime workspace
 COPY fprime_ws/ fprime_ws/
-RUN  git clone https://github.com/nasa/fprime.git /app/fprime
+RUN  git clone https://github.com/nasa/fprime.git /app/fprime && \
+     cd /app/fprime && \
+     git reset --hard a56426adbb888ce4f5a8c6a2be3071a25b11da16
 RUN  . /tmp/fprime-venv/bin/activate && python3 -m pip install -U -r /app/fprime/requirements.txt
 RUN  rm -rf fprime_ws/spring/build-artifacts fprime_ws/spring/build-fprime-automatic-native
 
@@ -68,15 +71,12 @@ RUN  . /tmp/fprime-venv/bin/activate && \
 # compiling ros workspace
 COPY ros_ws/ ros_ws/
 RUN  rm -rf ros_ws/build/ ros_ws/log/ ros_ws/install/
-RUN  . /opt/ros/foxy/setup.sh && \
+RUN  . /opt/ros/${ROS_DISTRO}/setup.sh && \
      cd ros_ws && \
      colcon build
 
 # sourcing ROS and F'
-RUN echo "source /opt/ros/foxy/setup.bash" >> /home/$USERNAME/.bashrc
+RUN echo "source /opt/ros/${ROS_DISTRO}/setup.bash" >> /home/$USERNAME/.bashrc
 RUN echo "source /tmp/fprime-venv/bin/activate" >> /home/$USERNAME/.bashrc 
-
-# download rosbridge for Foxglove monitoring
-RUN apt update && apt-get install -y ros-foxy-rosbridge-suite
 
 CMD ["bash"]
