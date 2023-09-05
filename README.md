@@ -76,6 +76,9 @@ To run the docker image, first make sure that within Visual Studio Code, you've 
 
 At this point, you can open `127.0.0.1:5000` in your favorite browser and see the GDS GUI running. If you open the charts tab and choose `the_controller.u` from the dropdown menu, you should see something similar to the following telemetry:
 
+**Note**: as of September 5th 2023, there is an fprime issue with communicating with the `gds` from inside the docker, causing the `gds` to indicate lack of communication (:x: in the top right corner).
+You can track the issue [here](https://github.com/lulav/ros2_fprime_bridge/issues/17). 
+
 ![GDS screenshot](png/screenshot_gds.png "spring mass dumper")
 
 In addition, if you open a ROS 2 viewer, e.g. [Foxglove](https://foxglove.dev/download), you should also see a similar visualization:
