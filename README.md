@@ -8,6 +8,8 @@ A[F`] <--> |ProtoBuf| B[ROS 2]
 ```
 
 # Table of Contents
+- [ROS 2 - FPrime Bridge - by Lulav Space ](#ros-2---fprime-bridge---by-lulav-space-)
+- [Table of Contents](#table-of-contents)
 - [How it works](#how-it-works)
 - [The spring example](#the-spring-example)
   - [Prerequisites](#prerequisites)
@@ -138,6 +140,4 @@ They can be run by typing `ctrl+p`. In the drop-down menu type `task ` (space af
 
 #### Monitoring
 
-At this point, if you open the charts tab in the GDS GUI and choose `the_controller.u` from the drop-down menu, you should see telemetry as in the previous section.
-
-In addition, if you open [Foxglove](https://foxglove.dev/download) (see details in the previous section), you should also see a  visualization as in the previous section.
+If you open [Foxglove](https://foxglove.dev/download) (see details in the previous section), you should also see a  visualization as in the previous section.
