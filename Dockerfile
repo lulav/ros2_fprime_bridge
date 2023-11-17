@@ -51,7 +51,13 @@ RUN apt-get update && \
 WORKDIR /workspaces/ros2_fprime_bridge
 
 # copying workspaces to the docker
+COPY examples/ examples/
 COPY common/ common/
+
+# generate protobuf files
+RUN cd common/autogen && \
+    python3 compile.py spring_defs.json && \
+    protoc -I=schemas/spring/proto3 --cpp_out=./schemas/spring/proto3 spring.proto
 
 #compiling fprime workspace
 COPY fprime_ws/ fprime_ws/
@@ -60,8 +66,6 @@ RUN  git clone https://github.com/nasa/fprime.git /app/fprime && \
      git reset --hard a56426adbb888ce4f5a8c6a2be3071a25b11da16
 RUN  . /tmp/fprime-venv/bin/activate && python3 -m pip install -U -r /app/fprime/requirements.txt
 RUN  rm -rf fprime_ws/spring/build-artifacts fprime_ws/spring/build-fprime-automatic-native
-
-COPY examples/ examples/
 
 RUN  . /tmp/fprime-venv/bin/activate && \
      cd fprime_ws/spring && \
